@@ -20,6 +20,33 @@ h1{
     text-align: left;
 }
 .containers{
-    padding: 0px 20px 20px 20px;
+    padding: 0px;
    
+}
+.slide-overleb {
+    position: fixed;
+    bottom: 0px;
+    padding-bottom: 3px;
+}
+
+
+
+ion-badge {
+    color: #fff;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    border-radius: 100%;
+}
+ 
+.category-block {
+    margin-bottom: 4px;
+}
+ 
+.category-banner {
+    border-left: 8px solid var(--ion-color-secondary);
+    background: var(--ion-color-light);
+    height: 40px;
+    padding: 10px;
+    font-weight: 500;
 }

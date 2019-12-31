@@ -12,4 +12,10 @@ export class MyjobPage implements OnInit {
   ngOnInit() {
   }
 
+  sliderConfig = {
+    slidesPerView: 1.14,
+    spaceBetween: -10,
+    centeredSlides: true
+  };
+
 }
