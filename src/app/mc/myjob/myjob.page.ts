@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-myjob',
   templateUrl: './myjob.page.html',
@@ -7,7 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyjobPage implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router: Router ) { 
+    
+  }
 
   ngOnInit() {
   }
@@ -17,5 +20,9 @@ export class MyjobPage implements OnInit {
     spaceBetween: -10,
     centeredSlides: true
   };
+  showDetail(){
+  	this.router.navigate(['tabs/myjob/showdetail']);
+  }
+
 
 }

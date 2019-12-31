@@ -1,0 +1,33 @@
+@import  url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+*{
+    font-family: 'Roboto', sans-serif;
+}
+
+h1{
+    margin: 0;
+    padding: 5px 0 5px 0;
+    font-size: 22px;
+    font-weight: 800 !important;
+}
+h3{
+    margin: 0;
+    padding: 20px 0 0 0;
+    font-size: 18px;
+    font-weight: 600 !important;
+}
+.subtext{
+    font-size: 16px;
+    color: #86868F;
+}
+
+.header-ios ion-toolbar:last-child {
+    --border-width: 0px;
+}
+
+.container{
+    padding: 0 20px 20px 20px;
+   
+}
+.mark-text{
+    font-weight: 800; color: black;
+}

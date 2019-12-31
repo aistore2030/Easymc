@@ -1,26 +1,37 @@
+@import  url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+*{
+    font-family: 'Roboto', sans-serif;
+}
+
 h1{
     margin: 0;
     padding: 5px 0 5px 0;
     font-size: 30px;
     font-weight: 800 !important;
 }
-.subtext{
+h3{
+    margin: 0;
+    padding: 20px 0 0 0;
     font-size: 18px;
-    color: #86868F;
+    font-weight: 600 !important;
 }
-.destext{
+.subtext{
     font-size: 16px;
     color: #86868F;
 }
 .container{
-    padding: 50px 20px 20px 20px;
+    padding: 30px 20px 20px 20px;
+   
+}
+.containers{
+    padding: 0px 20px ;
    
 }
 .swiper-zoom-container{
     text-align: left;
 }
-.containers{
-    padding: 0px;
+.container_slide{
+    margin-left: -20px;
    
 }
 .slide-overleb {
@@ -50,3 +61,6 @@ ion-badge {
     padding: 10px;
     font-weight: 500;
 }
+// .header-ios ion-toolbar:last-child {
+//     --border-width: 0px;
+// }

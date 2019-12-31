@@ -1,0 +1,24 @@
+@import  url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+*{
+    font-family: 'Roboto', sans-serif;
+}
+:host{
+   background-color: #124AE5;
+ 
+}
+ion-content{
+    --background:transparent;
+    transform:  translate3d(0,120px,0);
+}
+ion-toolbar{
+    --background: transparent;
+    --border-width: 0 !important;
+}
+.content-container{
+    height: 100%;
+    border-radius: 30px;
+    padding-top: 40px;
+    background-color: #ffffff;   
+}
+
+

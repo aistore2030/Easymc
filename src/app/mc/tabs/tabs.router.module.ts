@@ -12,6 +12,7 @@ const routes: Routes = [
 			{ path: 'bookmark', loadChildren: '../bookmark/bookmark.module#BookmarkPageModule' },
 			{ path: 'notification', loadChildren: '../notification/notification.module#NotificationPageModule' },
 			{ path: 'profile', loadChildren: '../profile/profile.module#ProfilePageModule' },	
+			{ path: 'myjob/showdetail', loadChildren: '../showdetail/showdetail.module#ShowdetailPageModule' },	
 		]
 	}	
 ];
