@@ -1,0 +1,7 @@
+{
+  "name": "easymc",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

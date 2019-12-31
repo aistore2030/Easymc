@@ -1,0 +1,46 @@
+.inner-scroll scroll-y overscroll {
+    background-color: #000000;
+}
+
+h1{
+    margin: 0;
+    padding: 5px 0 5px 0;
+    font-size: 30px;
+    font-weight: 800 !important;
+}
+.subtext{
+    font-size: 18px;
+    color: #86868F;
+}
+.destext{
+    font-size: 16px;
+    color: #86868F;
+}
+.container{
+    padding: 50px 20px 20px 20px;
+   
+}
+
+.containers{
+    padding: 0px 20px 20px 20px;
+   
+}
+
+.sc-ion-segment-ios-h {
+    --background: transparent;
+    --background-hover: rgba(var(--ion-color-primary-rgb,56,128,255),0.1);
+    --background-activated: rgba(var(--ion-color-primary-rgb,56,128,255),0.16);
+    --background-checked: #124AE5;
+    --color: #868686;
+    --color-checked: #ffffff;
+    --color-disabled: rgba(var(--ion-color-primary-rgb,56,128,255),0.3);
+    --color-checked-disabled: rgba(var(--ion-color-primary-contrast-rgb,255,255,255),0.3);
+    --border-color: #fff;
+    --indicator-color: transparent;
+    font-weight: 600;
+   
+}
+.num{
+    color: #124AE5;
+    font-weight: 800;
+}
