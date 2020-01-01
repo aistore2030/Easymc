@@ -57,17 +57,6 @@ a{
     padding: 30px 20px 20px 20px;
    
 }
-/* You can add more media queries using "," */
-@media screen and (min-width: 640px){
-    .container{
-        padding: 60px 80px 60px 80px;
-        max-width: 500px;
-        margin: 50px auto;
-        
-       border-radius: 20px;
-    }
-}
-
 .containers{
     padding: 20px 20px ;
  
@@ -146,10 +135,27 @@ ion-icon {
  }
 
  ion-radio{
-    --color-checked:#124AE5;
-    font-size: 16;
-     width: 25px;
-     height: 25px;
-     border: 2px solid #124AE5;
-     border-radius: 100%;
+    --color: #999;
+    --color-checked: #124AE5;
+    --border-width: 2px;
+    --border-style: solid;
+    width: 20px;
+    height: 20px;
  }
+
+ /* You can add more media queries using "," */
+@media screen and (min-width: 640px){
+    .container{
+        padding: 30px 80px 60px 80px;
+        max-width: 600px;
+        margin: 50px auto;
+        
+       border-radius: 20px;
+    }
+    .title {
+        margin-top: 0px;
+        text-align: center;
+        font-size: 24px;
+        font-weight: bold;
+      }
+}
