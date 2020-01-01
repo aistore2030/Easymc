@@ -1,0 +1,138 @@
+@import  url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+*{
+    font-family: 'Roboto', sans-serif;
+}
+
+h1{
+    margin: 0;
+    padding: 5px 0 5px 0;
+    font-size: 22px;
+    font-weight: 800 !important;
+}
+h2{
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600 !important;
+}
+
+h3{
+    margin: 0;
+    padding: 18px 0 0 0;
+    font-size: 18px;
+    font-weight: 600 !important;
+}
+h4{
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-weight: 600 !important;
+    float: left;
+}
+.subtext{
+    font-size: 16px;
+    color: #86868F;
+}
+.container{
+    padding: 30px 20px 20px 20px;
+   
+}
+/* You can add more media queries using "," */
+@media screen and (min-width: 640px){
+    .container{
+        padding: 60px 80px 60px 80px;
+        max-width: 500px;
+        margin: 50px auto;
+        box-shadow: 1px 1px 10px 0px rgba(55,84,170,0.28);
+       border-radius: 20px;
+    }
+}
+
+.containers{
+    padding: 20px 20px ;
+  
+   
+}
+.logo{
+    margin-top: 40px;
+    text-align: center;
+}
+img{
+    width: 90px;
+    height: 90px;
+
+}
+ion-icon{
+    color: #C4C4C4;
+    padding: 20px;
+}
+ion-input{
+    padding: 0 20px;
+    height: 48px;
+    font-size: 16px;
+    border-color:#ffffff;
+    border-radius:25px;
+    box-shadow: 1px 1px 4px 0px rgba(55,84,170,0.28);
+    border-width:0 ;
+    margin-top: 20px;
+}
+ion-icon {
+    font-size: 16px;
+  }
+
+
+.title {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+p {
+    font-size: 14px;
+    color: #696969;
+    text-align: center;
+  }
+
+  h6 {
+      padding: 10px 0 20px 0;
+    font-size: 14px;
+    color: #696969;
+    text-align: center;
+  }
+a{
+    font-weight: 600;
+    color: #124AE5;
+}
+  h5 {
+    padding: 30px 0 0 0;
+  font-size: 14px;
+  color: #696969;
+  text-align: center;
+}
+  .sigin{
+      margin-top: 40px;
+      height: 47px;
+      width: 100%;
+      font-size: 16px;
+      font-weight: 800;
+  }
+
+  .sigin-f{
+    height: 47px;
+    width: 48%;
+    font-size: 16px;
+    color: #ffffff;
+    border-radius:25px
+}
+
+  .sigin-g{
+    height: 47px;
+    width: 48%;
+    font-size: 16px;
+    color: #6F6F6F;
+    border-radius:25px
+}
+
+  ion-button{
+    --border-radius:25px;
+  }

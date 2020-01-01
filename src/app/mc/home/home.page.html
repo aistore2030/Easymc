@@ -8,166 +8,458 @@
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
-
 <ion-content>
-  <ion-toolbar>
-    <div class="container">
+
+
+    <div class="containers">
       <span class="subtext">Hi Admin!</span>
-      <h1>An Easy Way to Find Jobs</h1>
-      <span class="destext">30 December 2019 </span>
-      <br><br>
-      <ion-segment [(ngModel)]="pet">
-        <ion-segment-button checked value="puppies" style="padding: 5px 0 5px 0; border-radius:25px; ">
-          <ion-label>Call</ion-label>
-        </ion-segment-button>
-        <ion-segment-button value="kittens" style=" border-radius:25px;">
-          <ion-label>Favorite</ion-label>
-        </ion-segment-button>
-        <ion-segment-button value="ducklings" style=" border-radius:25px;">
-          <ion-label>Map</ion-label>
-        </ion-segment-button>
-      </ion-segment>
-    </div>
-  </ion-toolbar>
+      <h1>Popular Right Now</h1>
+      <span class="subtext" >Don’t miss the chance to join these events!</span>
+      <hr class="line">
+  </div>
+
+  <!-- ---------------------------------------------------------------------------------------- -->
+  <!-- <ion-item>
+    <h1>Popular Right Now</h1>
+    <a href="" slot="end" style="font-size: 16;">See more</a>
+  </ion-item>
+  <span class="subtext" style="padding: 20px;">Don’t miss the chance to join these events!</span> -->
+
+  <ion-slides [options]="slidercard">
+    <ion-slide>
+      <ion-card (click)="showDetail()" style="
+      -webkit-box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.75);
+      box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.75); ">
+        <img style=" object-fit: cover; border-radius: 8px;"
+          src="https://p-u.popcdn.net/hero_images/desktop_images/000/000/167/medium/755343b1dccf14b8ac4d627c8bc1180410c991f3.jpg%20-strip?1577639563" />
+          <ion-card-content style="padding: 10px 5px;
+          float: left;">
+          <h4>iCreator Conference 2019</h4>
+          <span style="padding: 5px 0;
+          float: left;">12 November 2019</span>
+        </ion-card-content>
+      </ion-card>
+     
+
+    </ion-slide>
+
+    <ion-slide>
+      <ion-card style="
+      -webkit-box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.75);
+      box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.75); ">
+        <img style=" object-fit: cover; border-radius: 8px;" 
+          src="https://p-u.popcdn.net/hero_images/desktop_images/000/000/173/medium/00c4a62e25d9fb31cd398676cf1bb8822c9044ae.jpg%20-strip?1576482335" />
+          <ion-card-content style="padding: 10px 5px;
+          float: left;">
+          <h4>iCreator Conference 2019</h4>
+          <span style="padding: 5px 0;
+          float: left;">12 November 2019</span>
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+
+    <ion-slide>
+      <ion-card style="
+      -webkit-box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.75);
+      box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.75); ">
+        <img style=" object-fit: cover; border-radius: 8px;"
+          src="https://s359.kapook.com/pagebuilder/1ed0969e-44d4-4291-82f0-93882e64c969.jpg" />
+          <ion-card-content style="padding: 10px 5px;
+          float: left;">
+          <h4>iCreator Conference 2019</h4>
+          <span style="padding: 5px 0;
+          float: left;">12 November 2019</span>
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+
+    <ion-slide>
+      <ion-card style="
+      -webkit-box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.75);
+      box-shadow: 0px 0px 0px 0px rgba(0,0,0,0.75); ">
+        <img style=" object-fit: cover; border-radius: 8px;"
+          src="https://s359.kapook.com/pagebuilder/1ed0969e-44d4-4291-82f0-93882e64c969.jpg" />
+          <ion-card-content style="padding: 10px 5px;
+          float: left;">
+          <h4>iCreator Conference 2019</h4>
+          <span style="padding: 5px 0;
+          float: left;">12 November 2019</span>
+        </ion-card-content>
+      </ion-card>
+    </ion-slide>
+  </ion-slides>
+
+
+  <!-- ---------------------------------------------------------------------------------------- -->
+
   <div class="containers">
+    <h1>An Easy Way to Find Jobs</h1>
+    <span class="subtext">Choose the desired job type.</span>
+  <hr class="line">
+    <br><br>
 
-    <div [ngSwitch]="pet">
-      <div *ngSwitchCase="'puppies'">
-        <ion-card>
-          <img style="height: 125px; object-fit: cover;"
-            src="https://s359.kapook.com/pagebuilder/1ed0969e-44d4-4291-82f0-93882e64c969.jpg" />
-          <ion-card-content>
-            <ion-card-title style="font-size: 20px; font-family: 'Roboto', sans-serif; font-weight: 800; ">iCreator
-              Conference 2019
-            </ion-card-title>
-            <span class="destext">Budget 5,000 - 10,000฿</span><br>
-            <ion-col style="padding: 0px;">
-              <ion-icon name="pin"></ion-icon><span>Siam Paragon</span>
-            </ion-col>
-            <ion-col>
-              <ion-icon name="calendar"></ion-icon> <span>12 November 2019</span>
-            </ion-col><br>
-            <ion-icon name="person"></ion-icon> <span>สมัครแล้ว <strong class="num"> 1 / 3 </strong></span>
-            <h3>รายละเอียด</h3>
-            <p>We are looking for a FX and animation
-              artist who can work on freelance </p>
-
-          </ion-card-content>
-        </ion-card>
-      </div>
+    <ion-segment [(ngModel)]="pet">
+      <ion-slides [options]="sliderConfig" #theSlides>
 
 
-      <div *ngSwitchCase="'kittens'">
-        <ion-card>
-          <img style="height: 125px; object-fit: cover;"
-            src="https://ionicframework.com/docs/demos/api/card/madison.jpg" />
-          <ion-card-header>
-            <ion-card-title style="font-size: 20px; font-family: 'Roboto', sans-serif; font-weight: 800; "> test
-            </ion-card-title>
-            <ion-card-subtitle style="font-size: 16px; font-family: 'Roboto', sans-serif; font-weight: 600;">Budget
-              5,000
-              -
-              10,000฿</ion-card-subtitle>
+        <ion-slide (click)="move(theSlides)">
+          <ion-segment-button checked value="puppies" style=" border-radius:25px;">
+            <ion-label>Call</ion-label>
+          </ion-segment-button>
+        </ion-slide>
 
-            <ion-col style="padding: 0px;">
-              <ion-icon name="pin"></ion-icon><span>Siam Paragon</span>
-            </ion-col>
-            <ion-col>
-              <ion-icon name="calendar"></ion-icon> <span>12 November 2019</span>
-            </ion-col>
-            <br><br>
+        <ion-slide (click)="move(theSlides)">
+          <ion-segment-button value="kittens" style=" border-radius:25px;">
+            <ion-label>Favorite</ion-label>
+          </ion-segment-button>
+        </ion-slide>
 
-          </ion-card-header>
-          <ion-card-content>
-            <hr style="background: #D9D9D9;">
+        <ion-slide (click)="move(theSlides)">
+          <ion-segment-button value="ducklings" style=" border-radius:25px;">
+            <ion-label>Map</ion-label>
+          </ion-segment-button>
+        </ion-slide>
 
-            <ion-col>
-              <ion-chip class="ion-margin-start">
-                <ion-avatar>
-                  <img src="https://ionicframework.com/docs/demos/api/card/madison.jpg">
-                </ion-avatar>
-                <ion-label>test</ion-label>
-              </ion-chip>
-            </ion-col>
+        <ion-slide (click)="move(theSlides)">
+          <ion-segment-button value="monkey" style=" border-radius:25px;">
+            <ion-label>monkey</ion-label>
+          </ion-segment-button>
+        </ion-slide>
 
-          </ion-card-content>
-        </ion-card>
-      </div>
+        <ion-slide (click)="move(theSlides)">
+          <ion-segment-button value="lion" style=" border-radius:25px;">
+            <ion-label>lion</ion-label>
+          </ion-segment-button>
+        </ion-slide>
+
+        <ion-slide (click)="move(theSlides)">
+          <ion-segment-button value="Tecnology" style=" border-radius:25px;">
+            <ion-label>Tecnology</ion-label>
+          </ion-segment-button>
+        </ion-slide>
+
+        <ion-slide (click)="move(theSlides)">
+          <ion-segment-button value="Education" style=" border-radius:25px;">
+            <ion-label>Education</ion-label>
+          </ion-segment-button>
+        </ion-slide>
+
+        <ion-slide (click)="move(theSlides)">
+          <ion-segment-button value="photo" style=" border-radius:25px;">
+            <ion-label>Photo</ion-label>
+          </ion-segment-button>
+        </ion-slide>
+
+      </ion-slides>
+
+    </ion-segment>
 
 
-      <div *ngSwitchCase="'kittens'">
-        <ion-card>
-          <img style="height: 125px; object-fit: cover;"
-            src="https://ionicframework.com/docs/demos/api/card/madison.jpg" />
-          <ion-card-header>
-            <ion-card-title style="font-size: 20px; font-family: 'Roboto', sans-serif; font-weight: 800; "> test
-            </ion-card-title>
-            <ion-card-subtitle style="font-size: 16px; font-family: 'Roboto', sans-serif; font-weight: 600;">Budget
-              5,000
-              -
-              10,000฿</ion-card-subtitle>
 
-            <ion-col style="padding: 0px;">
-              <ion-icon name="pin"></ion-icon><span>Siam Paragon</span>
-            </ion-col>
-            <ion-col>
-              <ion-icon name="calendar"></ion-icon> <span>12 November 2019</span>
-            </ion-col>
-            <br><br>
+  </div>
 
-          </ion-card-header>
-          <ion-card-content>
-            <hr style="background: #D9D9D9;">
 
-            <ion-col>
-              <ion-chip class="ion-margin-start">
-                <ion-avatar>
-                  <img src="https://ionicframework.com/docs/demos/api/card/madison.jpg">
-                </ion-avatar>
-                <ion-label>test</ion-label>
-              </ion-chip>
-            </ion-col>
+  <div [ngSwitch]="pet">
+    <div *ngSwitchCase="'puppies'">
+      <ion-card>
+        <img style="height: 125px; object-fit: cover;"
+          src="https://p-u.popcdn.net/hero_images/desktop_images/000/000/172/medium/4853d402665a911e99c3d10a7efbc51ced3235c7.jpg%20-strip?1576429601" />
+        <ion-card-content>
+          <ion-card-title style="font-size: 20px; font-family: 'Roboto', sans-serif; font-weight: 800; ">iCreator
+            Conference 2019
+          </ion-card-title>
+          <span class="destext">Budget 5,000 - 10,000฿</span><br>
+          <ion-col style="padding: 0px;">
+            <ion-icon name="pin"></ion-icon><span>Siam Paragon</span>
+          </ion-col>
+          <ion-col>
+            <ion-icon name="calendar"></ion-icon> <span>12 November 2019</span>
+          </ion-col><br>
+          <ion-icon name="person"></ion-icon> <span>สมัครแล้ว <strong class="num"> 1 / 3 </strong></span>
+          <h3>รายละเอียด</h3>
+          <p>We are looking for a FX and animation
+            artist who can work on freelance </p>
 
-          </ion-card-content>
-        </ion-card>
-      </div>
+        </ion-card-content>
+      </ion-card>
+    </div>
 
-      <div *ngSwitchCase="'ducklings'">
-        <ion-card>
-          <img style="height: 125px; object-fit: cover;"
-            src="https://ionicframework.com/docs/demos/api/card/madison.jpg" />
-          <ion-card-header>
-            <ion-card-title style="font-size: 20px; font-family: 'Roboto', sans-serif; font-weight: 800; "> test
-            </ion-card-title>
-            <ion-card-subtitle style="font-size: 16px; font-family: 'Roboto', sans-serif; font-weight: 600;">Budget
-              5,000
-              -
-              10,000฿</ion-card-subtitle>
 
-            <ion-col style="padding: 0px;">
-              <ion-icon name="pin"></ion-icon><span>Siam Paragon</span>
-            </ion-col>
-            <ion-col>
-              <ion-icon name="calendar"></ion-icon> <span>12 November 2019</span>
-            </ion-col>
-            <br><br>
+    <div *ngSwitchCase="'kittens'">
+      <ion-card>
+        <img style="height: 125px; object-fit: cover;"
+          src="https://ionicframework.com/docs/demos/api/card/madison.jpg" />
+        <ion-card-header>
+          <ion-card-title style="font-size: 20px; font-family: 'Roboto', sans-serif; font-weight: 800; "> test
+          </ion-card-title>
+          <ion-card-subtitle style="font-size: 16px; font-family: 'Roboto', sans-serif; font-weight: 600;">Budget
+            5,000
+            -
+            10,000฿</ion-card-subtitle>
 
-          </ion-card-header>
-          <ion-card-content>
-            <hr style="background: #D9D9D9;">
+          <ion-col style="padding: 0px;">
+            <ion-icon name="pin"></ion-icon><span>Siam Paragon</span>
+          </ion-col>
+          <ion-col>
+            <ion-icon name="calendar"></ion-icon> <span>12 November 2019</span>
+          </ion-col>
+          <br><br>
 
-            <ion-col>
-              <ion-chip class="ion-margin-start">
-                <ion-avatar>
-                  <img src="https://ionicframework.com/docs/demos/api/card/madison.jpg">
-                </ion-avatar>
-                <ion-label>test</ion-label>
-              </ion-chip>
-            </ion-col>
+        </ion-card-header>
+        <ion-card-content>
+          <hr style="background: #D9D9D9;">
 
-          </ion-card-content>
-        </ion-card>
-      </div>
+          <ion-col>
+            <ion-chip class="ion-margin-start">
+              <ion-avatar>
+                <img
+                  src="https://p-u.popcdn.net/hero_images/desktop_images/000/000/160/medium/2aa0830dd71daf57f662381df6d38f854c1b3eda.jpg%20-strip?1575002435">
+              </ion-avatar>
+              <ion-label>test</ion-label>
+            </ion-chip>
+          </ion-col>
+
+        </ion-card-content>
+      </ion-card>
+    </div>
+
+
+
+
+
+    <div *ngSwitchCase="'kittens'">
+      <ion-card>
+        <img style="height: 125px; object-fit: cover;"
+          src="https://ionicframework.com/docs/demos/api/card/madison.jpg" />
+        <ion-card-header>
+          <ion-card-title style="font-size: 20px; font-family: 'Roboto', sans-serif; font-weight: 800; "> test
+          </ion-card-title>
+          <ion-card-subtitle style="font-size: 16px; font-family: 'Roboto', sans-serif; font-weight: 600;">Budget
+            5,000
+            -
+            10,000฿</ion-card-subtitle>
+
+          <ion-col style="padding: 0px;">
+            <ion-icon name="pin"></ion-icon><span>Siam Paragon</span>
+          </ion-col>
+          <ion-col>
+            <ion-icon name="calendar"></ion-icon> <span>12 November 2019</span>
+          </ion-col>
+          <br><br>
+
+        </ion-card-header>
+        <ion-card-content>
+          <hr style="background: #D9D9D9;">
+
+          <ion-col>
+            <ion-chip class="ion-margin-start">
+              <ion-avatar>
+                <img
+                  src="https://p-u.popcdn.net/hero_images/desktop_images/000/000/160/medium/2aa0830dd71daf57f662381df6d38f854c1b3eda.jpg%20-strip?1575002435">
+              </ion-avatar>
+              <ion-label>test</ion-label>
+            </ion-chip>
+          </ion-col>
+
+        </ion-card-content>
+      </ion-card>
+    </div>
+
+    <div *ngSwitchCase="'ducklings'">
+      <ion-card>
+        <img style="height: 125px; object-fit: cover;"
+          src="https://ionicframework.com/docs/demos/api/card/madison.jpg" />
+        <ion-card-header>
+          <ion-card-title style="font-size: 20px; font-family: 'Roboto', sans-serif; font-weight: 800; "> test
+          </ion-card-title>
+          <ion-card-subtitle style="font-size: 16px; font-family: 'Roboto', sans-serif; font-weight: 600;">Budget
+            5,000 - 10,000฿</ion-card-subtitle>
+
+          <ion-col style="padding: 0px;">
+            <ion-icon name="pin"></ion-icon><span>Siam Paragon</span>
+          </ion-col>
+          <ion-col>
+            <ion-icon name="calendar"></ion-icon> <span>12 November 2019</span>
+          </ion-col>
+          <br><br>
+        </ion-card-header>
+        <ion-card-content>
+          <hr style="background: #D9D9D9;">
+          <ion-col>
+            <ion-chip class="ion-margin-start">
+              <ion-avatar>
+                <img src="https://ionicframework.com/docs/demos/api/card/madison.jpg">
+              </ion-avatar>
+              <ion-label>test</ion-label>
+            </ion-chip>
+          </ion-col>
+        </ion-card-content>
+      </ion-card>
+    </div>
+
+    <div *ngSwitchCase="'monkey'">
+      <ion-card>
+        <img style="height: 125px; object-fit: cover;"
+          src="https://ionicframework.com/docs/demos/api/card/madison.jpg" />
+        <ion-card-header>
+          <ion-card-title style="font-size: 20px; font-family: 'Roboto', sans-serif; font-weight: 800; "> test
+          </ion-card-title>
+          <ion-card-subtitle style="font-size: 16px; font-family: 'Roboto', sans-serif; font-weight: 600;">Budget
+            5,000 - 10,000฿</ion-card-subtitle>
+
+          <ion-col style="padding: 0px;">
+            <ion-icon name="pin"></ion-icon><span>Siam Paragon</span>
+          </ion-col>
+          <ion-col>
+            <ion-icon name="calendar"></ion-icon> <span>12 November 2019</span>
+          </ion-col>
+          <br><br>
+        </ion-card-header>
+        <ion-card-content>
+          <hr style="background: #D9D9D9;">
+          <ion-col>
+            <ion-chip class="ion-margin-start">
+              <ion-avatar>
+                <img src="https://ionicframework.com/docs/demos/api/card/madison.jpg">
+              </ion-avatar>
+              <ion-label>test</ion-label>
+            </ion-chip>
+          </ion-col>
+        </ion-card-content>
+      </ion-card>
+    </div>
+
+    <div *ngSwitchCase="'lion'">
+      <ion-card>
+        <img style="height: 125px; object-fit: cover;"
+          src="https://ionicframework.com/docs/demos/api/card/madison.jpg" />
+        <ion-card-header>
+          <ion-card-title style="font-size: 20px; font-family: 'Roboto', sans-serif; font-weight: 800; "> test
+          </ion-card-title>
+          <ion-card-subtitle style="font-size: 16px; font-family: 'Roboto', sans-serif; font-weight: 600;">Budget
+            5,000 - 10,000฿</ion-card-subtitle>
+
+          <ion-col style="padding: 0px;">
+            <ion-icon name="pin"></ion-icon><span>Siam Paragon</span>
+          </ion-col>
+          <ion-col>
+            <ion-icon name="calendar"></ion-icon> <span>12 November 2019</span>
+          </ion-col>
+          <br><br>
+        </ion-card-header>
+        <ion-card-content>
+          <hr style="background: #D9D9D9;">
+          <ion-col>
+            <ion-chip class="ion-margin-start">
+              <ion-avatar>
+                <img src="https://ionicframework.com/docs/demos/api/card/madison.jpg">
+              </ion-avatar>
+              <ion-label>test</ion-label>
+            </ion-chip>
+          </ion-col>
+        </ion-card-content>
+      </ion-card>
+    </div>
+
+    <div *ngSwitchCase="'Tecnology'">
+      <ion-card>
+        <img style="height: 125px; object-fit: cover;"
+          src="https://ionicframework.com/docs/demos/api/card/madison.jpg" />
+        <ion-card-header>
+          <ion-card-title style="font-size: 20px; font-family: 'Roboto', sans-serif; font-weight: 800; "> test
+          </ion-card-title>
+          <ion-card-subtitle style="font-size: 16px; font-family: 'Roboto', sans-serif; font-weight: 600;">Budget
+            5,000 - 10,000฿</ion-card-subtitle>
+
+          <ion-col style="padding: 0px;">
+            <ion-icon name="pin"></ion-icon><span>Siam Paragon</span>
+          </ion-col>
+          <ion-col>
+            <ion-icon name="calendar"></ion-icon> <span>12 November 2019</span>
+          </ion-col>
+          <br><br>
+        </ion-card-header>
+        <ion-card-content>
+          <hr style="background: #D9D9D9;">
+          <ion-col>
+            <ion-chip class="ion-margin-start">
+              <ion-avatar>
+                <img src="https://ionicframework.com/docs/demos/api/card/madison.jpg">
+              </ion-avatar>
+              <ion-label>test</ion-label>
+            </ion-chip>
+          </ion-col>
+        </ion-card-content>
+      </ion-card>
+    </div>
+
+    <div *ngSwitchCase="'Education'">
+      <ion-card>
+        <img style="height: 125px; object-fit: cover;"
+          src="https://ionicframework.com/docs/demos/api/card/madison.jpg" />
+        <ion-card-header>
+          <ion-card-title style="font-size: 20px; font-family: 'Roboto', sans-serif; font-weight: 800; "> test
+          </ion-card-title>
+          <ion-card-subtitle style="font-size: 16px; font-family: 'Roboto', sans-serif; font-weight: 600;">Budget
+            5,000 - 10,000฿</ion-card-subtitle>
+
+          <ion-col style="padding: 0px;">
+            <ion-icon name="pin"></ion-icon><span>Siam Paragon</span>
+          </ion-col>
+          <ion-col>
+            <ion-icon name="calendar"></ion-icon> <span>12 November 2019</span>
+          </ion-col>
+          <br><br>
+        </ion-card-header>
+        <ion-card-content>
+          <hr style="background: #D9D9D9;">
+          <ion-col>
+            <ion-chip class="ion-margin-start">
+              <ion-avatar>
+                <img src="https://ionicframework.com/docs/demos/api/card/madison.jpg">
+              </ion-avatar>
+              <ion-label>test</ion-label>
+            </ion-chip>
+          </ion-col>
+        </ion-card-content>
+      </ion-card>
+    </div>
+
+
+    <div *ngSwitchCase="'photo'">
+      <ion-card>
+        <img style="height: 125px; object-fit: cover;"
+          src="https://ionicframework.com/docs/demos/api/card/madison.jpg" />
+        <ion-card-header>
+          <ion-card-title style="font-size: 20px; font-family: 'Roboto', sans-serif; font-weight: 800; "> test
+          </ion-card-title>
+          <ion-card-subtitle style="font-size: 16px; font-family: 'Roboto', sans-serif; font-weight: 600;">Budget
+            5,000 - 10,000฿</ion-card-subtitle>
+
+          <ion-col style="padding: 0px;">
+            <ion-icon name="pin"></ion-icon><span>Siam Paragon</span>
+          </ion-col>
+          <ion-col>
+            <ion-icon name="calendar"></ion-icon> <span>12 November 2019</span>
+          </ion-col>
+          <br><br>
+        </ion-card-header>
+        <ion-card-content>
+          <hr style="background: #D9D9D9;">
+          <ion-col>
+            <ion-chip class="ion-margin-start">
+              <ion-avatar>
+                <img src="https://ionicframework.com/docs/demos/api/card/madison.jpg">
+              </ion-avatar>
+              <ion-label>test</ion-label>
+            </ion-chip>
+          </ion-col>
+        </ion-card-content>
+      </ion-card>
     </div>
 
   </div>
