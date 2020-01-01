@@ -22,71 +22,10 @@ h3{
     font-weight: 600 !important;
 }
 h4{
-    margin: 0;
-    padding: 0;
+    padding: 30px 0 0 0;
     font-size: 16px;
-    font-weight: 600 !important;
-    float: left;
+    color: #696969;
 }
-.subtext{
-    font-size: 16px;
-    color: #86868F;
-}
-.container{
-    padding: 30px 20px 20px 20px;
-   
-}
-/* You can add more media queries using "," */
-@media screen and (min-width: 640px){
-    .container{
-        padding: 60px 80px 60px 80px;
-        max-width: 500px;
-        margin: 50px auto;
-        
-       border-radius: 20px;
-    }
-}
-
-.containers{
-    padding: 20px 20px ;
-  
-   
-}
-.logo{
-    margin-top: 40px;
-    text-align: center;
-}
-img{
-    width: 90px;
-    height: 90px;
-
-}
-ion-icon{
-    color: #C4C4C4;
-    padding: 20px;
-}
-ion-input{
-    --padding-bottom: 15.5px;
-    --padding-top: 15.5px;
-    font-size: 16px;
-    border-color:#ffffff;
-    border-radius:25px;
-    box-shadow: 1px 1px 4px 0px rgba(55,84,170,0.28);
-    border-width:0 ;
-    margin-top: 20px;
-    --padding-start:30px;
-}
-ion-icon {
-    font-size: 16px;
-  }
-
-
-.title {
-    margin-top: 10px;
-    text-align: center;
-    font-size: 24px;
-    font-weight: bold;
-  }
 
 p {
     font-size: 14px;
@@ -110,7 +49,58 @@ a{
   color: #696969;
   text-align: center;
 }
-  .sigin{
+.subtext{
+    font-size: 16px;
+    color: #86868F;
+}
+.container{
+    padding: 30px 20px 20px 20px;
+   
+}
+/* You can add more media queries using "," */
+@media screen and (min-width: 640px){
+    .container{
+        padding: 60px 80px 60px 80px;
+        max-width: 500px;
+        margin: 50px auto;
+        
+       border-radius: 20px;
+    }
+}
+
+.containers{
+    padding: 20px 20px ;
+ 
+}
+
+ion-icon{
+    color: #C4C4C4;
+    padding: 20px;
+}
+ion-input{
+    --padding-bottom: 15.5px;
+    --padding-top: 15.5px;
+    font-size: 16px;
+    border-color:#ffffff;
+    border-radius:25px;
+    box-shadow: 1px 1px 4px 0px rgba(55,84,170,0.28);
+    border-width:0 ;
+    margin-top: 20px;
+    --padding-start:30px;
+}
+ion-icon {
+    font-size: 16px;
+  }
+
+
+.title {
+    margin-top: 60px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .sigup{
       margin-top: 40px;
       height: 47px;
       width: 100%;
@@ -137,3 +127,29 @@ a{
   ion-button{
     --border-radius:25px;
   }
+ .mark{
+     color:#ED1D1D;
+ }
+ ion-item{
+    --inner-border-width: 0px 0px 0px 0px;
+    --padding-bottom: 2px;
+    --padding-top: 2px;
+    border-color:#ffffff;
+    border-radius:25px;
+    box-shadow: 1px 1px 4px 0px rgba(55,84,170,0.28);
+    margin-top: 20px;
+    --padding-start:30px;
+    color:#6F6F6F;
+
+
+  
+ }
+
+ ion-radio{
+    --color-checked:#124AE5;
+    font-size: 16;
+     width: 25px;
+     height: 25px;
+     border: 2px solid #124AE5;
+     border-radius: 100%;
+ }
