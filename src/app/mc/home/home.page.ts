@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Platform, IonSlides } from '@ionic/angular';
+import { ToastController } from '@ionic/angular';
+import { Provider } from '../../providers/provider';
+import { Router } from '@angular/router';
+import { Storage } from '@ionic/Storage';
 
 @Component({
   selector: 'app-home',
@@ -10,10 +14,33 @@ export class HomePage implements OnInit {
   pet: string = "puppies";
   isAndroid: boolean = false;
   slider: any;
-
-  constructor(platform: Platform) {
-   }
+  email: string;
+  anggota: any;
   
+  customers: any = [];
+  limit: number = 13; // LIMIT GET PERDATA
+  start: number = 0;
+
+  constructor(platform: Platform,	private router: Router,
+  	private Provider: Provider,
+    private storage: Storage,
+    public toastCtrl: ToastController) {
+   }
+   ionViewWillEnter(){
+    this.storage.get('session_storage').then((res)=>{
+      this.anggota = res;
+      this.email = this.anggota.email;
+      console.log(res);
+    });
+
+  	this.customers = [];
+  	this.start = 0;
+  	this.loadCustomer();
+  }
+
+  loadCustomer() {
+    throw new Error("Method not implemented.");
+  }
   ngOnInit() {
   }
   slidercard = {

@@ -4,10 +4,10 @@
     <p>Create an account to Msily to get all features</p>
 
     <ion-input type="text" placeholder="Username"></ion-input>
-    <ion-input type="text" placeholder="Email"></ion-input>
+    <ion-input type="text" placeholder="Email" [(ngModel)]="email"></ion-input>
     
-    <ion-input type="password" placeholder="password"> </ion-input>
-    <ion-input type="password" placeholder="Confirm Password"> </ion-input>
+    <ion-input type="password" placeholder="password" [(ngModel)]="password"  > </ion-input>
+    <ion-input type="password" placeholder="Confirm Password" > </ion-input>
 
     <ion-radio-group slot="primary">
 
@@ -26,10 +26,10 @@
 
     </ion-radio-group>
 
-    <ion-button class="sigup" block>Create Account</ion-button>
+    <ion-button class="sigup" block (click)="prosesRegister()" >Create Account</ion-button>
 
 
-    <h5>Already have an account? <a>Sign In.</a></h5>
+    <h5>Already have an account? <a (click)="formLogin()">Sign In.</a></h5>
 
     <!-- <ion-buttons  slot="primary">
       <ion-button  class="sigin-f" block style="background: #124AE5;">Facebook</ion-button>
