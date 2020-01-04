@@ -1,0 +1,136 @@
+<ion-header>
+
+</ion-header>
+
+<ion-content>
+  <ion-toolbar>
+    <ion-buttons slot="secondary">
+      <ion-button>
+        <ion-icon color="light" slot="icon-only" name="time"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-buttons slot="primary">
+      <ion-button color="light" (click)="presentActionSheet()">
+        <ion-icon slot="icon-only" name="settings"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <ion-avatar>
+    <img src="https://f.ptcdn.info/192/066/000/pylequ8eqfyBoV5jx8B-o.jpg">
+  </ion-avatar>
+  <div class="contaier">
+    <div class="wrapper_hearder">
+      <h2>Lalisa Manoban</h2>
+      <span>Bangkok, Thailand</span>
+      <div style="font-size: 25px; color: gold; padding: 10px 0 30px 0">
+      <ion-icon name="star" ></ion-icon>
+      <ion-icon name="star" ></ion-icon>
+      <ion-icon name="star" ></ion-icon>
+      <ion-icon name="star" ></ion-icon>
+      <ion-icon name="star" ></ion-icon>
+    </div>
+      <!-- <rating [(ngModel)]="rate" readonly="false" size="default" (ngModelChange)="onRateChange($event)"></rating> -->
+      <ion-grid>
+        <ion-row>
+          <ion-col style="border-right: 1px solid #7373733b;">
+            <h5>1</h5>
+            <h6>Job</h6>
+          </ion-col>
+          <ion-col style="border-right: 1px solid #7373733b;">
+            <h5>1</h5>
+            <h6>Completed Jobs</h6>
+          </ion-col>
+          <ion-col>
+            <h5>1</h5>
+            <h6>Cancle Jobs</h6>
+          </ion-col>
+        </ion-row>
+
+      </ion-grid>
+    </div>
+    <div class="wrapper_content">
+      <ion-segment [(ngModel)]="profile">
+        <ion-segment-button checked value="Personal">
+          <ion-label>Personal</ion-label>
+        </ion-segment-button>
+
+        <ion-segment-button value="Review">
+          <ion-label>Review</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+    </div>
+    <div class="wrapper_content_text">
+      <div [ngSwitch]="profile">
+        <div *ngSwitchCase="'Personal'">
+          <h2>Information</h2>
+          <p>Contrary to popular belief, Lorem Ipsum is not
+            simply random text. It has roots in a piece
+            of classical Latin literature from 45 BC,
+            Contrary to popular belief, Lorem Ipsum is not
+            simply random text. It has roots in a piece
+            of classical Latin literature from 45 BC,
+            Contrary to popular belief, Lorem Ipsum is not
+            simply random text. It has roots in a piece
+            of classical Latin literature from 45 BC,
+            Contrary to popular belief, Lorem Ipsum is not
+            simply random text. It has roots in a piece
+            of classical Latin literature from 45 BC,
+            Contrary to popular belief, Lorem Ipsum is not
+            simply random text. It has roots in a piece
+          </p>
+        </div>
+
+        <div *ngSwitchCase="'Review'">
+          <div>
+            <ion-item style="padding: 30px 0 0 0;">
+              <ion-avatar slot="start" style="width: 60px; height: 60px; margin: 0px;">
+                <img src="https://f.ptcdn.info/192/066/000/pylequ8eqfyBoV5jx8B-o.jpg">
+              </ion-avatar>
+              <ion-label>
+                <h3>Phanukarn Rattanasuk</h3>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+              </ion-label>
+            </ion-item>
+            <ion-label>
+              <h2>“ Where does it come from? “</h2>
+              <p>Contrary to popular belief, Lorem Ipsum is not
+                simply random text. It has roots in a piece
+                of classical Latin literature from 45 BC, </p>
+            </ion-label>
+          </div>
+          <div>
+            <ion-item style="padding: 30px 0 0 0;">
+              <ion-avatar slot="start" style="width: 60px; height: 60px; margin: 0px;">
+                <img src="https://f.ptcdn.info/192/066/000/pylequ8eqfyBoV5jx8B-o.jpg">
+              </ion-avatar>
+              <ion-label>
+                <h3>Phanukarn Rattanasuk</h3>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+              </ion-label>
+            </ion-item>
+            <ion-label>
+              <h2>“ Where does it come from? “</h2>
+              <p>Contrary to popular belief, Lorem Ipsum is not
+                simply random text. It has roots in a piece
+                of classical Latin literature from 45 BC, </p>
+            </ion-label>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+</ion-content>

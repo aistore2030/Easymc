@@ -3,25 +3,25 @@
     <h2 class="title">Let’s Get Started!</h2>
     <p>Create an account to Msily to get all features</p>
 
-    <ion-input type="text" placeholder="Username"></ion-input>
+    <!-- <ion-input type="text" placeholder="Username"></ion-input> -->
     <ion-input type="text" placeholder="Email" [(ngModel)]="email"></ion-input>
     
     <ion-input type="password" placeholder="password" [(ngModel)]="password"  > </ion-input>
-    <ion-input type="password" placeholder="Confirm Password" > </ion-input>
+    <ion-input type="password" placeholder="Confirm Password" [(ngModel)]="confirm_password"  > </ion-input>
 
-    <ion-radio-group slot="primary">
+    <ion-radio-group slot="primary" [(ngModel)]="status">
 
 
       <h4>Choose your field <span class="mark"> * Choose only one</span></h4>
 
       <ion-item>
         <ion-label>MC/PR/PC/Pretty</ion-label>
-        <ion-radio value="apple"></ion-radio>
+        <ion-radio value="y" checked ></ion-radio>
       </ion-item>
 
       <ion-item>
         <ion-label>Employer</ion-label>
-        <ion-radio value="grape" checked></ion-radio>
+        <ion-radio value="n" ></ion-radio>
       </ion-item>
 
     </ion-radio-group>

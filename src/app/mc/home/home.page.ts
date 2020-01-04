@@ -33,9 +33,6 @@ export class HomePage implements OnInit {
       console.log(res);
     });
 
-  	this.customers = [];
-  	this.start = 0;
-  	this.loadCustomer();
   }
 
   loadCustomer() {

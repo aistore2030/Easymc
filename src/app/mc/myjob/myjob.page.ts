@@ -21,7 +21,7 @@ export class MyjobPage implements OnInit {
     centeredSlides: true
   };
   showDetail(){
-  	this.router.navigate(['tabs/myjob/showdetail']);
+  	this.router.navigate(['tabs/mc/myjob/showdetail']);
   }
 
 

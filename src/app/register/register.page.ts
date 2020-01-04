@@ -14,7 +14,9 @@ export class RegisterPage implements OnInit {
    
   email: string = "";
   password: string = "";
+  status: string = "";
   confirm_password: string = "";
+  anggota: any;
 
 
   constructor(
@@ -29,6 +31,8 @@ export class RegisterPage implements OnInit {
   }
 
   async prosesRegister(){
+
+
     // validation done
     if(this.email==""){
         const toast = await this.toastCtrl.create({
@@ -42,11 +46,28 @@ export class RegisterPage implements OnInit {
           duration: 3000
         });
         toast.present();
-    }else{
+    }
+    else if(this.password != this.confirm_password){
+      const toast = await this.toastCtrl.create({
+        message: 'Password not Match!"',
+        duration: 3000
+      });
+      toast.present();
+  }
+
+    else if(this.status==""){
+      const toast = await this.toastCtrl.create({
+        message: 'status is required',
+        duration: 3000
+      });
+      toast.present();
+  }else{
 
       let body = {
         email: this.email,
         password: this.password,
+        confirm_password: this.confirm_password,
+        status: this.status,
         aksi: 'register'
       };
 

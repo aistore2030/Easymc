@@ -12,9 +12,9 @@ import { Storage } from '@ionic/Storage';
 })
 export class LoginPage implements OnInit {
   
-  email: string = "";
-  password: string = "";
-  status : string = "";
+  email: string = "em@hotmail.com";
+  password: string = "123456";
+  status : string = "n";
 
   constructor(
   	private router: Router,
@@ -50,10 +50,18 @@ export class LoginPage implements OnInit {
           }
           else if(data.result ['status'] == 'n'){
             this.storage.set('session_storage', data.result);
-            this.router.navigate(['/tabs/home']);
+            this.router.navigate(['/tabbar/employer/homeem']);
             const toast = await this.toastCtrl.create({
               message: 'Login N user Succesfully.',
               duration: 2000
+            });
+            toast.present();
+          }
+          else if(data.result ['status'] == ''){
+            this.storage.set('session_storage', data.result);
+            const toast = await this.toastCtrl.create({
+              message: 'error',
+              duration: 3000
             });
             toast.present();
           }
