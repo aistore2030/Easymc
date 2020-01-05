@@ -1,9 +1,66 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>homeem</ion-title>
+    <ion-title>Home</ion-title>
+    <ion-buttons slot="primary">
+      <ion-button>
+        <ion-icon style="color: black;" name="calendar"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
-
 <ion-content>
+  
+
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
+
+  <div class="containers" >
+    <span class="subtext">Hi {{email}}!</span>
+    <h1>Find your MC</h1>
+    <span class="subtext">Don't miss the opportunity to find an MC.</span>
+    <hr class="line">
+  </div>
+  <ion-grid  >
+    <ion-row>
+      <ion-col *ngFor="let customer of customers" col-12>
+        <ion-card >
+          <img style=" object-fit: cover;height: 143px;"
+            src="https://cache.gmo2.sistacafe.com/images/uploads/summary/image/61318/246c161a906fe739f7ccaec86cfba922.jpg" />
+          <ion-card-header>
+            <h5>{{customer.fname}} {{customer.lname}}</h5>
+            <div style="font-size: 12px; color: gold; padding: 0">
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+              <ion-icon name="star"></ion-icon>
+            </div>
+            <p style="font-size: 12; color:#86868F;">Bangkok, Thailand</p>
+            <span style="font-size: 12; color:#86868F;">Gender : Male</span><br>
+            <span style="font-size: 12; color:#86868F;">Age : 24 </span>
+
+          </ion-card-header>
+          <ion-card-content>
+            <p style=" margin:0px; font-weight: 800;">5,xxx - 1x,xxx ฿</p>
+
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      
+    </ion-row>
+
+  </ion-grid>
+  <ion-infinite-scroll (ionInfinite)="loadData($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="Loading more data...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
 
 </ion-content>

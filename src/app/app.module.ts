@@ -14,6 +14,13 @@ import { PostProvider } from '../providers/post-provider';
 import { Provider } from './providers/provider';
 import { IonicStorageModule } from '@ionic/Storage';
 import {HttpClientModule} from '@angular/common/http';
+import { Camera } from '@ionic-native/Camera/ngx';
+import { File } from '@ionic-native/File/ngx';
+import { WebView } from '@ionic-native/ionic-webview/ngx';
+import { FilePath } from '@ionic-native/file-path/ngx';
+import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer/ngx';
+ 
+
 
 
 @NgModule({
@@ -33,7 +40,13 @@ import {HttpClientModule} from '@angular/common/http';
     PostProvider,
     Provider,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    FileTransfer,
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    Camera,
+    File,
+    WebView,
+    FilePath
+    
   ],
   bootstrap: [AppComponent]
 })

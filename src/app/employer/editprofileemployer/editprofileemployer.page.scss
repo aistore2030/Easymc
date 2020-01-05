@@ -1,0 +1,37 @@
+ion-input{
+    --padding-bottom: 15.5px;
+    --padding-top: 15.5px;
+    font-size: 16px;
+    border-color:#ffffff;
+    border-radius:25px;
+    box-shadow: 1px 1px 4px 0px rgba(55,84,170,0.28);
+    border-width:0 ;
+    margin-top: 20px;
+    --padding-start:30px;
+}
+.container{
+    padding: 0 20px 20px 20px;
+   
+}
+p{
+    font-size: 14;
+    color: #232323;
+}
+ion-avatar{
+    margin-left: auto;
+    margin-right: auto;
+    width: 120px;
+    height: 120px;
+    max-width: none;
+    z-index: 2;
+    /* position: fixed; */
+    top: 70px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 5px solid #ffffff;
+    margin-top: 40px;
+}
+.center{
+    text-align: center;
+}

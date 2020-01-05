@@ -3,6 +3,7 @@ import { ActionSheetController } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { Storage } from '@ionic/Storage';
 import { ToastController } from '@ionic/angular';
+import{ Provider } from '../../providers/provider'
 
 @Component({
   selector: 'app-profileem',
@@ -12,24 +13,29 @@ import { ToastController } from '@ionic/angular';
 export class ProfileemPage implements OnInit {
   actionSheet:any;
   profile: string = "Personal";
-  rating = '50%';
+  
+  customers: any = [];
+  limit: number = 13; // LIMIT GET PERDATA
+  start: number = 0;
 
   constructor(public actionSheetController: ActionSheetController,
     private router: Router,
     private storage: Storage, 
-    public toastCtrl: ToastController) { }
+    public toastCtrl: ToastController,
+    private Provider:Provider) { }
 
   ngOnInit() {
   }
+
   presentActionSheet() {
     this.actionSheet = this.actionSheetController.create({
-      header: 'Freaky Jolly',
+      header: 'Profile employer',
       buttons: [{
-        text: 'edit',
+        text: 'edit profile',
         role: 'destructive',
         icon:'create',
         handler: () => {
-          this.router.navigate(['tabbar/employer/profileem/editprofileemployer']);
+          this.router.navigate(['/employer/profileem/editprofileemployer']);
         }
       }, {
         text: 'Logout',
@@ -51,6 +57,11 @@ export class ProfileemPage implements OnInit {
     });
   }
 
+  updateCustomer(id,employ_id,fname,lname,location,info){
+  	this.router.navigate(['/employer/profileem/editprofileemployer/' + id + '/' + employ_id + '/'  + fname + '/'  + lname+ '/'  + location+ '/'  + info]);
+  }
+
+  
   async prosesLogout(){
     this.storage.clear();
     this.router.navigate(['/login']);
@@ -64,5 +75,7 @@ export class ProfileemPage implements OnInit {
     
     console.log('Your rate:', event);
   }
+
+  
 
 }

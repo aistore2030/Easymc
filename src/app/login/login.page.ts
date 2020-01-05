@@ -15,7 +15,7 @@ export class LoginPage implements OnInit {
   email: string = "em@hotmail.com";
   password: string = "123456";
   status : string = "n";
-
+  
   constructor(
   	private router: Router,
   	private Provider: Provider,
@@ -94,9 +94,6 @@ export class LoginPage implements OnInit {
   	this.router.navigate(['/register']);
   }
 
-  myJob(){
-  	this.router.navigate(['/customer']);
-  }
 
 
 }

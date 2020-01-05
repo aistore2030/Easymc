@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>createMyjobs</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+
+    <p>Event Name</p>
+    <ion-input type="text" placeholder="Event Name"></ion-input>
+
+    <p>Event location</p>
+    <ion-input type="text" placeholder="Event location"></ion-input>
+
+    <ion-grid>
+
+      <ion-row>
+        <ion-col style="padding: 0px;">
+          <p>Floor</p>
+          <ion-input type="text" placeholder="floor"></ion-input>
+        </ion-col>
+
+        <ion-col style="padding: 0px;">
+          <p>Floor</p>
+          <ion-input type="text" placeholder="floor"></ion-input>
+          </ion-col >
+   
+      </ion-row>
+
+      <ion-row>
+        <ion-col style="padding: 0px;">
+          <p>Budget</p>
+          <ion-input type="text" placeholder="xxxx" [(ngModel)]="userCount" name="userCount"
+            (keypress)="numberOnlyValidation($event)">
+          </ion-input>
+        </ion-col>
+
+
+        <ion-col style="padding: 0px;">
+          <p>Budget</p>
+          <ion-input type="text" placeholder="xxxx" [(ngModel)]="userCount" name="userCount"
+            (keypress)="numberOnlyValidation($event)">
+          </ion-input>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    
+      
+     
+    <p>Number of people</p>
+     <div class="flex_row">
+      <ion-button (click)="decrement()"><ion-icon name="remove-circle" ></ion-icon></ion-button>
+      <p style="text-align: center; width: 100%;"> {{currentNumber}} </p>
+      <ion-button style="float: right;"  (click)="increment()"><ion-icon name="add-circle" ></ion-icon></ion-button>
+    </div>
+
+  </div>
+
+
+
+</ion-content>

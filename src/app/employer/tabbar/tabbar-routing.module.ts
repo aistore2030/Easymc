@@ -8,12 +8,13 @@ const routes: Routes = [
     path: '',
     component: TabbarPage,
     children: [
-			{ path: 'employer/homeem', loadChildren: '../homeem/homeem.module#HomeemPageModule' },
+      { path: 'employer/homeem', loadChildren: '../homeem/homeem.module#HomeemPageModule' },
 			{ path: 'employer/myjobem', loadChildren: '../myjobem/myjobem.module#MyjobemPageModule' },
       { path: 'employer/bookmarkem', loadChildren: '../bookmarkem/bookmarkem.module#BookmarkemPageModule' },
 			{ path: 'employer/notificationem', loadChildren: '../notificationem/notificationem.module#NotificationemPageModule' },
       { path: 'employer/profileem', loadChildren: '../profileem/profileem.module#ProfileemPageModule' },	
-      { path: 'employer/profileem/editprofileemployer', loadChildren: '../editprofileemployer/editprofileemployer.module#EditprofileemployerPageModule' },	
+      
+      
       
 		]
   }

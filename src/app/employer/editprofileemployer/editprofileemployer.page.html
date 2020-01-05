@@ -1,13 +1,50 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>editprofileemployer</ion-title>
+    <ion-title>editprofileemployer {{id}}</ion-title>
     <ion-buttons slot="start">
-      <ion-back-button text="Cancle" >
+      <ion-back-button text="Cancle">
       </ion-back-button>
     </ion-buttons>
+    
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-avatar>
+    <img src="https://f.ptcdn.info/192/066/000/pylequ8eqfyBoV5jx8B-o.jpg">
+  </ion-avatar>
+  <div class="center">
+      <a >
+        upload image
+      </a>
 
+  </div>
+<hr style="border-top: 1px solid #E2E2E2; margin-top: 30px;">
+  <div class="container">
+
+    <ion-input type="hidden" [(ngModel)]="employ_id" value="{{id}}"></ion-input>
+    <p>Firstname</p>
+    <ion-input type="text" placeholder="Firstname" [(ngModel)]="fname"></ion-input>
+    <p>Lastname</p>
+    <ion-input type="text" placeholder="Lastname"  [(ngModel)]="lname"></ion-input>
+    <p>Location</p>
+    <ion-input placeholder="Location" [(ngModel)]="location"></ion-input>
+    <p>infomation</p>
+    <ion-input type="text" placeholder="infomation"  [(ngModel)]="info"></ion-input>
+
+
+    <!-- <ion-button (click)="openCam()" >Take Photo</ion-button>
+    <ion-button (click)="upload()" >Upload</ion-button>
+    <img src="{{image}}"> -->
+
+
+ 
+      <ion-button style="width: 100%; margin-top: 30px;" text="Accept" (click)="createdProses()">Accept</ion-button>
+
+
+    <!-- <ion-button color="tertiary"  (click)="createdProses()">Submit</ion-button>
+    <ion-button class="sigin" block (click)="createdProses()" >Sign In</ion-button> -->
+    <!-- <ion-button expand="block" padding color="tertiary" *ngIf="id>=1" (click)="updateProses()" fill="outline">Update
+    </ion-button> -->
+  </div>
 </ion-content>
