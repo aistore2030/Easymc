@@ -18,6 +18,10 @@ export class ProfileemPage implements OnInit {
   limit: number = 13; // LIMIT GET PERDATA
   start: number = 0;
 
+  anggota: any;
+  id: number;
+  employ_id: number;
+
   constructor(public actionSheetController: ActionSheetController,
     private router: Router,
     private storage: Storage, 
@@ -25,7 +29,9 @@ export class ProfileemPage implements OnInit {
     private Provider:Provider) { }
 
   ngOnInit() {
+   
   }
+  
 
   presentActionSheet() {
     this.actionSheet = this.actionSheetController.create({
@@ -57,8 +63,8 @@ export class ProfileemPage implements OnInit {
     });
   }
 
-  updateCustomer(id,employ_id,fname,lname,location,info){
-  	this.router.navigate(['/employer/profileem/editprofileemployer/' + id + '/' + employ_id + '/'  + fname + '/'  + lname+ '/'  + location+ '/'  + info]);
+  updateCustomer(employer_id,employ_id,fname,lname,location,info){
+  	this.router.navigate(['/employer/profileem/editprofileemployer/' + employer_id + '/' + employ_id + '/'  + fname  + '/' + lname + '/' + location + '/' + info ]);
   }
 
   
@@ -71,10 +77,61 @@ export class ProfileemPage implements OnInit {
       });
     toast.present();
   }
-  onRateChange(event) {
-    
-    console.log('Your rate:', event);
+
+  ionViewWillEnter(){
+
+    this.storage.get('session_storage').then((res)=>{
+      this.anggota = res;
+      this.id = this.anggota.id;
+      console.log(res);
+
+    });
+  	this.customers = [];
+    this.loadCustomer();
+   
   }
+
+
+  loadCustomer(){
+  	return new Promise(resolve => {
+      this.storage.get('session_storage').then((res)=>{
+        this.anggota = res;
+        this.id = this.anggota.id;
+        console.log(res);
+     
+  		let body = { 
+        aksi : 'getdata',
+        id: this.id  
+        
+  		};
+  		this.Provider.postData(body, 'profile_employer.php').subscribe(data => {
+  			for(let customer of data.result){
+          this.customers.push(customer);
+        }
+        resolve(true);
+        console.log(data);
+      });
+     });
+
+    });
+
+  }  
+
+  delCustomer(id){
+
+  	let body = {
+  			aksi : 'delete',
+  			employer_id : id
+  		};
+
+  		this.Provider.postData(body, 'profile_employer.php').subscribe(data => {
+  			this.ionViewWillEnter();
+  		});
+
+  }
+
+
+
 
   
 

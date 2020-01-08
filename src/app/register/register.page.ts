@@ -76,12 +76,24 @@ export class RegisterPage implements OnInit {
       this.Provider.postData(body, 'login.php').subscribe(async data =>{
         var alertpesan = data.msg;
         if(data.success){
-          this.router.navigate(['/login']);
-          const toast = await this.toastCtrl.create({
-            message: 'Register succesful',
-            duration: 3000
-          });
-          toast.present();
+          if(data.result ['status'] == 'y'){
+            this.storage.set('session_storage', data.result);
+            this.router.navigate(['/tabs/mc/home']);
+            const toast = await this.toastCtrl.create({
+              message: 'Login user Succesfully.',
+              duration: 2000
+            });
+            toast.present();
+          }
+          else if(data.result ['status'] == 'n'){
+            this.storage.set('session_storage', data.result);
+            this.router.navigate(['/employer/profileem/create-myjobs']);
+            const toast = await this.toastCtrl.create({
+              message: 'Login N user Succesfully.',
+              duration: 2000
+            });
+            toast.present();
+          }
         }
         
         else{

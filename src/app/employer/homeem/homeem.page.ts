@@ -12,7 +12,7 @@ import { Storage } from '@ionic/Storage';
 export class HomeemPage implements OnInit {
 
   anggota: any;
-  username: string;
+  email: string;
   
   customers: any = [];
   limit: number = 13; // LIMIT GET PERDATA
@@ -31,7 +31,7 @@ export class HomeemPage implements OnInit {
   ionViewWillEnter(){
     this.storage.get('session_storage').then((res)=>{
       this.anggota = res;
-      this.username = this.anggota.username;
+      this.email = this.anggota.email;
       console.log(res);
     });
 
@@ -70,6 +70,10 @@ export class HomeemPage implements OnInit {
   			resolve(true);
   		});
   	});
+  }
+
+  showCustomer(employer_id,employ_id,fname,lname,location,info){
+  	this.router.navigate(['/employer/homeem/show-profilemc/' + employer_id + '/' + employ_id + '/'  + fname  + '/' + lname + '/' + location + '/' + info ]);
   }
 
 }

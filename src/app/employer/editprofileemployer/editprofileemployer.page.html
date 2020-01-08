@@ -22,24 +22,31 @@
 <hr style="border-top: 1px solid #E2E2E2; margin-top: 30px;">
   <div class="container">
 
-    <ion-input type="hidden" [(ngModel)]="employ_id" value="{{id}}"></ion-input>
+    <ion-input type="text" [(ngModel)]="employ_id" value="{{id}}"></ion-input>
     <p>Firstname</p>
     <ion-input type="text" placeholder="Firstname" [(ngModel)]="fname"></ion-input>
     <p>Lastname</p>
     <ion-input type="text" placeholder="Lastname"  [(ngModel)]="lname"></ion-input>
     <p>Location</p>
     <ion-input placeholder="Location" [(ngModel)]="location"></ion-input>
+
     <p>infomation</p>
-    <ion-input type="text" placeholder="infomation"  [(ngModel)]="info"></ion-input>
+    <ion-textarea  placeholder="infomation"  [(ngModel)]="info"></ion-textarea>
 
 
-    <!-- <ion-button (click)="openCam()" >Take Photo</ion-button>
-    <ion-button (click)="upload()" >Upload</ion-button>
-    <img src="{{image}}"> -->
+
+    <ion-input type="text" placeholder="img_profile"  [(ngModel)]="img_profile"></ion-input>
+
+
 
 
  
-      <ion-button style="width: 100%; margin-top: 30px;" text="Accept" (click)="createdProses()">Accept</ion-button>
+     <!-- <ion-button style="width: 100%; margin-top: 30px;" text="Accept" (click)="createdProses()">Accept</ion-button>-->
+
+      <ion-button expand="block" padding color="tertiary"  (click)="createdProses()" fill="outline">Accept
+      </ion-button>
+      <ion-button expand="block" padding color="tertiary" *ngIf="employer_id>=1" (click)="updateProses()" fill="outline">Update
+      </ion-button>
 
 
     <!-- <ion-button color="tertiary"  (click)="createdProses()">Submit</ion-button>
@@ -47,4 +54,6 @@
     <!-- <ion-button expand="block" padding color="tertiary" *ngIf="id>=1" (click)="updateProses()" fill="outline">Update
     </ion-button> -->
   </div>
+
+  
 </ion-content>

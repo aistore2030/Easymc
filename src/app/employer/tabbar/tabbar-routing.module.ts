@@ -13,9 +13,8 @@ const routes: Routes = [
       { path: 'employer/bookmarkem', loadChildren: '../bookmarkem/bookmarkem.module#BookmarkemPageModule' },
 			{ path: 'employer/notificationem', loadChildren: '../notificationem/notificationem.module#NotificationemPageModule' },
       { path: 'employer/profileem', loadChildren: '../profileem/profileem.module#ProfileemPageModule' },	
-      
-      
-      
+     
+        
 		]
   }
 ];

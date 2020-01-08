@@ -21,7 +21,7 @@
           <ion-input type="text" placeholder="floor"></ion-input>
         </ion-col>
 
-        <ion-col style="padding: 0px;">
+        <ion-col style="padding: 0px 10px;">
           <p>Floor</p>
           <ion-input type="text" placeholder="floor"></ion-input>
           </ion-col >
@@ -31,15 +31,15 @@
       <ion-row>
         <ion-col style="padding: 0px;">
           <p>Budget</p>
-          <ion-input type="text" placeholder="xxxx" [(ngModel)]="userCount" name="userCount"
+          <ion-input type="text" placeholder="xxxx"  name="userCount"
             (keypress)="numberOnlyValidation($event)">
           </ion-input>
         </ion-col>
 
 
-        <ion-col style="padding: 0px;">
+        <ion-col style="padding: 0px 10px;">
           <p>Budget</p>
-          <ion-input type="text" placeholder="xxxx" [(ngModel)]="userCount" name="userCount"
+          <ion-input type="text" placeholder="xxxx"  name="userCount"
             (keypress)="numberOnlyValidation($event)">
           </ion-input>
         </ion-col>
@@ -51,9 +51,10 @@
      
     <p>Number of people</p>
      <div class="flex_row">
-      <ion-button (click)="decrement()"><ion-icon name="remove-circle" ></ion-icon></ion-button>
+     <ion-icon style=" width: 50px; height: 50px; margin-left:  30px;"  name="remove-circle" (click)="decrement() "></ion-icon>
       <p style="text-align: center; width: 100%;"> {{currentNumber}} </p>
-      <ion-button style="float: right;"  (click)="increment()"><ion-icon name="add-circle" ></ion-icon></ion-button>
+      <ion-icon style="float: right; width: 50px; height: 50px; margin-right: 30px;" name="add-circle"(click)="increment()" ></ion-icon>
+  
     </div>
 
   </div>

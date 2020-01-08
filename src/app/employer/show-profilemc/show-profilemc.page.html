@@ -1,0 +1,130 @@
+<ion-header>
+
+</ion-header>
+
+<ion-content>
+  <ion-toolbar>
+  
+    <ion-buttons slot="primary">
+      <ion-button color="light" (click)="backhome()">
+        
+        <ion-icon slot="icon-only" name="close-circle"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <div >
+    <ion-toolbar>
+      
+      <ion-avatar>
+        <img src="https://instagram.fbkk2-5.fna.fbcdn.net/v/t51.2885-15/e35/p1080x1080/80019881_231274911206218_6059748691160978011_n.jpg?_nc_ht=instagram.fbkk2-5.fna.fbcdn.net&_nc_cat=1&_nc_ohc=OTgmNlm-q3IAX9RX9qx&oh=a181d52e8a5d095872974982e3a1aacd&oe=5EA03A3E">
+      </ion-avatar>
+    </ion-toolbar>
+    <div class="contaier">
+      <div class="wrapper_hearder">
+
+
+        <h2>{{fname}} {{lname}} </h2>
+
+
+
+        <span>{{location}}</span>
+        <div style="font-size: 25px; color: gold; padding: 10px 0 30px 0">
+          <ion-icon name="star"></ion-icon>
+          <ion-icon name="star"></ion-icon>
+          <ion-icon name="star"></ion-icon>
+          <ion-icon name="star"></ion-icon>
+          <ion-icon name="star"></ion-icon>
+        </div>
+        <!-- <rating [(ngModel)]="rate" readonly="false" size="default" (ngModelChange)="onRateChange($event)"></rating> -->
+        <ion-grid>
+          <ion-row>
+            <ion-col style="border-right: 1px solid #7373733b;">
+              <h5>1</h5>
+              <h6>Job</h6>
+            </ion-col>
+            <ion-col style="border-right: 1px solid #7373733b;">
+              <h5>1</h5>
+              <h6>Completed Jobs</h6>
+            </ion-col>
+            <ion-col>
+              <h5>1</h5>
+              <h6>Cancle Jobs</h6>
+            </ion-col>
+          </ion-row>
+
+        </ion-grid>
+      </div>
+      <div class="wrapper_content">
+        <ion-segment [(ngModel)]="profile">
+          <ion-segment-button checked value="Personal">
+            <ion-label>Personal</ion-label>
+          </ion-segment-button>
+
+          <ion-segment-button value="Review">
+            <ion-label>Review</ion-label>
+          </ion-segment-button>
+        </ion-segment>
+      </div>
+      <div class="wrapper_content_text">
+        <div [ngSwitch]="profile">
+          <div *ngSwitchCase="'Personal'">
+            <h2>Information</h2>
+            <p>{{info}}
+            </p>
+          </div>
+
+          <div *ngSwitchCase="'Review'">
+            <div>
+              <ion-item style="padding: 30px 0 0 0;">
+                <ion-avatar slot="start" style="width: 60px; height: 60px; margin: 0px;">
+                  <img src="https://f.ptcdn.info/192/066/000/pylequ8eqfyBoV5jx8B-o.jpg">
+                </ion-avatar>
+                <ion-label>
+                  <h3>Phanukarn Rattanasuk</h3>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                </ion-label>
+              </ion-item>
+              <ion-label>
+                <h2>“ Where does it come from? “</h2>
+                <p>Contrary to popular belief, Lorem Ipsum is not
+                  simply random text. It has roots in a piece
+                  of classical Latin literature from 45 BC, </p>
+              </ion-label>
+            </div>
+            <div>
+              <ion-item style="padding: 30px 0 0 0;">
+                <ion-avatar slot="start" style="width: 60px; height: 60px; margin: 0px;">
+                  <img src="https://f.ptcdn.info/192/066/000/pylequ8eqfyBoV5jx8B-o.jpg">
+                </ion-avatar>
+                <ion-label>
+                  <h3>Phanukarn Rattanasuk</h3>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                </ion-label>
+              </ion-item>
+              <ion-label>
+                <h2>“ Where does it come from? “</h2>
+                <p>Contrary to popular belief, Lorem Ipsum is not
+                  simply random text. It has roots in a piece
+                  of classical Latin literature from 45 BC, </p>
+              </ion-label>
+            </div>
+
+          </div>
+        </div>
+
+      
+      </div>
+
+
+    </div>
+
+  </div>
+</ion-content>

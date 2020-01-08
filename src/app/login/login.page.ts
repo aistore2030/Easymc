@@ -15,6 +15,7 @@ export class LoginPage implements OnInit {
   email: string = "em@hotmail.com";
   password: string = "123456";
   status : string = "n";
+  id: number;
   
   constructor(
   	private router: Router,
@@ -65,11 +66,11 @@ export class LoginPage implements OnInit {
             });
             toast.present();
           }
-          
-          
-		  this.email = "";
-      this.password = "";
-      this.status = "";
+
+
+          this.email = "";
+          this.password = "";
+          this.status = "";
           console.log(data);
         }
         else{

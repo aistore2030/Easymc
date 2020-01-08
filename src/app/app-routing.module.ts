@@ -7,15 +7,15 @@ const routes: Routes = [
   { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
   { path: 'register', loadChildren: './register/register.module#RegisterPageModule' },
   { path: 'tabbar', loadChildren: './employer/tabbar/tabbar.module#TabbarPageModule' },
-  { path: 'employer/profileem/editprofileemployer', loadChildren: './employer/editprofileemployer/editprofileemployer.module#EditprofileemployerPageModule' },	
-  { path: 'employer/homeem/:id/:user_id/:fname/:lname/:location/:info/:img_profile/:create_at', loadChildren: '../homeem/homeem.module#HomeemPageModule' },
-  {
-    path: 'create-myjobs',
-    loadChildren: () => import('./employer/create-myjobs/create-myjobs.module').then( m => m.CreateMyjobsPageModule)
-  },
+  { path: 'employer/profileem/editprofileemployer', loadChildren: './employer/editprofileemployer/editprofileemployer.module#EditprofileemployerPageModule' },
+  { path: 'employer/profileem/editprofileemployer/:employer_id/:employ_id/:fname/:lname/:location/:info', loadChildren: './employer/editprofileemployer/editprofileemployer.module#EditprofileemployerPageModule' },
+  
+  { path: 'employer/homeem/show-profilemc/:employer_id/:employ_id/:fname/:lname/:location/:info', loadChildren: './employer/show-profilemc/show-profilemc.module#ShowProfilemcPageModule' },	  
   
 
- 
+
+
+  
 ];
 
 @NgModule({
