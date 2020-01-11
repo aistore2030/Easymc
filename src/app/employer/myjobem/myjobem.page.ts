@@ -14,7 +14,7 @@ export class MyjobemPage implements OnInit {
   }
 
   createJobs(){
-  	this.router.navigate(['/create-myjobs']);
+  	this.router.navigate(['employer/createmyjob']);
   }
 
 }

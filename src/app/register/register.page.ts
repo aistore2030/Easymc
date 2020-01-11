@@ -32,7 +32,6 @@ export class RegisterPage implements OnInit {
 
   async prosesRegister(){
 
-
     // validation done
     if(this.email==""){
         const toast = await this.toastCtrl.create({
@@ -87,7 +86,7 @@ export class RegisterPage implements OnInit {
           }
           else if(data.result ['status'] == 'n'){
             this.storage.set('session_storage', data.result);
-            this.router.navigate(['/employer/profileem/create-myjobs']);
+            this.router.navigate(['/employer/profileem/editprofileemployer']);
             const toast = await this.toastCtrl.create({
               message: 'Login N user Succesfully.',
               duration: 2000

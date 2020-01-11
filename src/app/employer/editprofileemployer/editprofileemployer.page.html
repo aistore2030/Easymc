@@ -5,48 +5,56 @@
       <ion-back-button text="Cancle">
       </ion-back-button>
     </ion-buttons>
-    
+
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-avatar>
-    <img src="https://f.ptcdn.info/192/066/000/pylequ8eqfyBoV5jx8B-o.jpg">
+  
+  <ion-avatar *ngIf="images.length == 0">
+    <ion-img src="https://secure.gravatar.com/avatar/234e9cec179f18b37af37a0d1434161d?s=240&d=https%3A%2F%2Fstatic.teamtreehouse.com%2Fassets%2Fcontent%2Fdefault_avatar-ea7cf6abde4eec089a4e03cc925d0e893e428b2b6971b12405a9b118c837eaa2.png&r=pg"></ion-img>
   </ion-avatar>
+  <div *ngFor="let img of images; index as pos">
+    <ion-avatar>
+      <ion-img [src]="img.path"></ion-img>
+    </ion-avatar>
+    <ion-button slot="end" fill="clear" (click)="deleteImage(img, pos)">
+      <ion-icon slot="icon-only" name="trash"></ion-icon>
+    </ion-button>
+  </div>
   <div class="center">
-      <a >
-        upload image
-      </a>
+    <a (click)="selectImage()">
+      upload image
+    </a>
 
   </div>
-<hr style="border-top: 1px solid #E2E2E2; margin-top: 30px;">
+  <hr style="border-top: 1px solid #E2E2E2; margin-top: 30px;">
   <div class="container">
 
     <ion-input type="text" [(ngModel)]="employ_id" value="{{id}}"></ion-input>
     <p>Firstname</p>
     <ion-input type="text" placeholder="Firstname" [(ngModel)]="fname"></ion-input>
     <p>Lastname</p>
-    <ion-input type="text" placeholder="Lastname"  [(ngModel)]="lname"></ion-input>
+    <ion-input type="text" placeholder="Lastname" [(ngModel)]="lname"></ion-input>
     <p>Location</p>
     <ion-input placeholder="Location" [(ngModel)]="location"></ion-input>
 
     <p>infomation</p>
-    <ion-textarea  placeholder="infomation"  [(ngModel)]="info"></ion-textarea>
-
-
-
-    <ion-input type="text" placeholder="img_profile"  [(ngModel)]="img_profile"></ion-input>
+    <ion-textarea placeholder="infomation" [(ngModel)]="info"></ion-textarea>
 
 
 
 
+
+
+    <!-- <ion-button style="width: 100%; margin-top: 30px;" text="Accept" (click)="createdProses()">Accept</ion-button>-->
+    <div >
+      <ion-button (click)="createdProses()" >Accept</ion-button>
  
-     <!-- <ion-button style="width: 100%; margin-top: 30px;" text="Accept" (click)="createdProses()">Accept</ion-button>-->
-
-      <ion-button expand="block" padding color="tertiary"  (click)="createdProses()" fill="outline">Accept
+      <ion-button expand="block" padding color="tertiary" *ngIf="employer_id>=1" (click)="updateProses()"
+        fill="outline">Update
       </ion-button>
-      <ion-button expand="block" padding color="tertiary" *ngIf="employer_id>=1" (click)="updateProses()" fill="outline">Update
-      </ion-button>
+    </div>
 
 
     <!-- <ion-button color="tertiary"  (click)="createdProses()">Submit</ion-button>
@@ -55,5 +63,5 @@
     </ion-button> -->
   </div>
 
-  
+
 </ion-content>

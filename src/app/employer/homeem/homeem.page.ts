@@ -17,6 +17,8 @@ export class HomeemPage implements OnInit {
   customers: any = [];
   limit: number = 13; // LIMIT GET PERDATA
   start: number = 0;
+  id: any;
+  search: any;
 
   constructor(
   	private router: Router,
@@ -74,6 +76,28 @@ export class HomeemPage implements OnInit {
 
   showCustomer(employer_id,employ_id,fname,lname,location,info){
   	this.router.navigate(['/employer/homeem/show-profilemc/' + employer_id + '/' + employ_id + '/'  + fname  + '/' + lname + '/' + location + '/' + info ]);
+  }
+
+
+  Macching(){
+  	return new Promise(resolve => {
+  		let body = {
+  			aksi : 'matching',
+        id: this.id  ,
+        search: this.search
+  		};
+
+  		this.Provider.postData(body, 'matching.php').subscribe(data => {
+  			for(let customer of data.result){
+  				this.customers.push(customer);
+  			}
+  			resolve(true);
+  		});
+  	});
+  }
+
+  test(){
+    this.router.navigate(['employer/profileem/editprofileemployer']);
   }
 
 }

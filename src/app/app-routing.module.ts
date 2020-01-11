@@ -11,6 +11,14 @@ const routes: Routes = [
   { path: 'employer/profileem/editprofileemployer/:employer_id/:employ_id/:fname/:lname/:location/:info', loadChildren: './employer/editprofileemployer/editprofileemployer.module#EditprofileemployerPageModule' },
   
   { path: 'employer/homeem/show-profilemc/:employer_id/:employ_id/:fname/:lname/:location/:info', loadChildren: './employer/show-profilemc/show-profilemc.module#ShowProfilemcPageModule' },	  
+
+
+  { path: 'employer/createmyjob', loadChildren: './employer/createmyjob/createmyjob.module#CreatemyjobPageModule' },
+
+ 
+ 
+
+  
   
 
 

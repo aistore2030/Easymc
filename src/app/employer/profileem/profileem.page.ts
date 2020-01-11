@@ -63,8 +63,8 @@ export class ProfileemPage implements OnInit {
     });
   }
 
-  updateCustomer(employer_id,employ_id,fname,lname,location,info){
-  	this.router.navigate(['/employer/profileem/editprofileemployer/' + employer_id + '/' + employ_id + '/'  + fname  + '/' + lname + '/' + location + '/' + info ]);
+  updateCustomer(employer_id,employ_id,fname,lname,location,info,img_profile){
+  	this.router.navigate(['/employer/profileem/editprofileemployer/' + employer_id + '/' + employ_id + '/'  + fname  + '/' + lname + '/' + location + '/' + info+ '/' + img_profile ]);
   }
 
   

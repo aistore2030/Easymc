@@ -1,10 +1,23 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Usuario } from '../modals/usuario.model';
+
+import { delay } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ImagesService {
-  private _READER : any  			=	new FileReader();
-  private _REMOTE_URI : string 	=	"http://YOUR-REMOTE-URI-HERE/parse-upload.php";
-  constructor() { }
+
+  constructor( private http: HttpClient ) { }
+
+  getUsuarios() {
+
+    return this.http.get<Usuario[]>( 'https://jsonplaceholder.typicode.com/users' )
+              .pipe(
+                delay( 2500 )
+              );
+
+  }
+
 }

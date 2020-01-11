@@ -7,9 +7,10 @@ import { IonicModule } from '@ionic/angular';
 import { BookmarkemPageRoutingModule } from './bookmarkem-routing.module';
 
 import { BookmarkemPage } from './bookmarkem.page';
-
+import { PipesModule } from '../../pipes/pipes.module';
 @NgModule({
   imports: [
+    PipesModule,
     CommonModule,
     FormsModule,
     IonicModule,

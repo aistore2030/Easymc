@@ -70,6 +70,9 @@ export class HomePage implements OnInit {
     slides.slideNext(600,true)
   }
 
+  test(){
+    this.router.navigate(['employer/profileem/editprofileemployer']);
+  }
 
 
 

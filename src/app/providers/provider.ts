@@ -3,6 +3,7 @@ import { Http, Headers, RequestOptions } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { Storage } from '@ionic/Storage';
 
+
 @Injectable()
 export class Provider {
 	server: string = "http://192.168.64.2/server_easymc/"; 
@@ -21,4 +22,7 @@ export class Provider {
 		
 		.map(res => res.json());
 	}
+
+
+
 }

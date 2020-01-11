@@ -22,12 +22,12 @@
         </ion-button>
       </ion-buttons>
       <ion-avatar>
-        <img src="{{customer.img_profile}}">
+    <img src="../../../assets/uploads/{{customer.img_profile}}" alt="">      
       </ion-avatar>
 
       <ion-buttons slot="primary">
         <ion-button color="primary"
-          (click)="updateCustomer(customer.employer_id,customer.employ_id,customer.fname,customer.lname ,customer.location,customer.info)">
+          (click)="updateCustomer(customer.employer_id,customer.employ_id,customer.fname,customer.lname ,customer.location,customer.info,customer.img_profile)">
           <ion-icon slot="icon-only" name="create"></ion-icon>
         </ion-button>
       </ion-buttons>
