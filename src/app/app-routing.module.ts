@@ -14,6 +14,14 @@ const routes: Routes = [
 
 
   { path: 'employer/createmyjob', loadChildren: './employer/createmyjob/createmyjob.module#CreatemyjobPageModule' },
+  { path: 'employer/profileem/uploadprofile', loadChildren: './employer/uploadprofile/uploadprofile.module#UploadprofilePageModule' },
+  { path: 'employer/profileem/uploadprofile/:employer_id/:img_profile', loadChildren: './employer/uploadprofile/uploadprofile.module#UploadprofilePageModule' },
+  
+  { path: 'mc/createprofile', loadChildren: './mc/createprofile/createprofile.module#CreateprofilePageModule' },
+
+  
+  
+
 
  
  

@@ -36,6 +36,7 @@
 		EAB485EDBCCA4B889D944EF8 /* CDVSplashScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = C27EFF0BD17A483BA8D14D32 /* CDVSplashScreen.m */; };
 		ECA2220E99BB4E97877AB4A0 /* CDVIonicKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 76751A699C9448D3BA776DA3 /* CDVIonicKeyboard.m */; };
 		F5B3FF4434D94B5F820B2040 /* CDVDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 065DA90CF63D459BBB5967ED /* CDVDevice.m */; };
+		320043009B854E5DAD148746 /* CDVFileTransfer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F207286A409438BA9ABA2FB /* CDVFileTransfer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +124,8 @@
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = MyApp/config.xml; sourceTree = "<group>"; };
 		F93A115A4179473C96A296B3 /* CDVStatusBar.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = CDVStatusBar.h; path = "cordova-plugin-statusbar/CDVStatusBar.h"; sourceTree = "<group>"; };
 		FB0C22594EC04164BE64350F /* CoreLocation.framework */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		0F207286A409438BA9ABA2FB /* CDVFileTransfer.m */ = {isa = PBXFileReference; name = "CDVFileTransfer.m"; path = "cordova-plugin-file-transfer/CDVFileTransfer.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		5E2AA28A6483494C92501219 /* CDVFileTransfer.h */ = {isa = PBXFileReference; name = "CDVFileTransfer.h"; path = "cordova-plugin-file-transfer/CDVFileTransfer.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -271,6 +274,8 @@
 				D45E9CCFF0254A1AA97A41C0 /* sqlite3.c */,
 				E012B008211744F38A229CDF /* SQLitePlugin.h */,
 				2BF7E6D7F93845D197A30CAD /* sqlite3.h */,
+				0F207286A409438BA9ABA2FB /* CDVFileTransfer.m */,
+				5E2AA28A6483494C92501219 /* CDVFileTransfer.h */,
 			);
 			name = Plugins;
 			path = MyApp/Plugins;
@@ -418,6 +423,7 @@
 				E86D29C553D34BC4BBB6FF6A /* SQLitePlugin.m in Sources */,
 				D3C149F8F88340E28A89A34F /* CustomPSPDFThreadSafeMutableDictionary.m in Sources */,
 				0588550DABC84A8A9746889C /* sqlite3.c in Sources */,
+				320043009B854E5DAD148746 /* CDVFileTransfer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

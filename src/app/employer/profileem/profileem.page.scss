@@ -21,15 +21,15 @@ ion-toolbar{
 ion-avatar{
     margin-left: auto;
     margin-right: auto;
-    width: 120px;
-    height: 120px;
+    width: 140px;
+    height: 140px;
     max-width: none;
     z-index: 2;
-    top: 50px;
+    top: 40px;
     left: 0;
     right: 0;
     bottom: 0;
-    border: 5px solid #ffffff;
+    border: 3px solid #ffffff;
 }
 p{
     color: #696969;
@@ -106,4 +106,19 @@ ion-item{
     --border-width: 0px;
     --padding-end:0px;
     --padding-start:0px;
+}
+
+.avatar{
+    color: red;
+    width: 25px;
+    background-color: #dcdcdc;
+    height: 25px;
+    border-radius: 30px;
+    border: 1px solid #ffffff;
+    color: black;
+    font-size: 20px;
+    position: absolute;
+    top: 65%;
+    left: 58%;
+    padding: 3px;
 }

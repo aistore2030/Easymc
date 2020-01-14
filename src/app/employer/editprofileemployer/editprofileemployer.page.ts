@@ -33,6 +33,7 @@ export class EditprofileemployerPage implements OnInit {
   id: number;
   employer_id: any;
   name: any;
+  img_profile: any;
 
   constructor( 
 		private router: Router,
@@ -60,13 +61,13 @@ export class EditprofileemployerPage implements OnInit {
         this.fname = data.fname;
         this.lname = data.lname;
         this.location = data.location;
-        this.info = data.info;
-    
+        this.info = data.info;    
         console.log(data);
       });
 
       this.platform.ready().then(() => {
         this.loadStoredImages();
+       
       });
     }
   
@@ -102,7 +103,9 @@ export class EditprofileemployerPage implements OnInit {
           for (let img of arr) {
             let filePath = this.file.dataDirectory + img;
             let resPath = this.pathForImage(filePath);
+            this.name = this.images;
             this.images.push({ name: img, path: resPath, filePath: filePath });
+            
             console.log(images);
           }
         }
@@ -255,7 +258,7 @@ export class EditprofileemployerPage implements OnInit {
         message: 'Uploading image...',
     });
     await loading.present();
-    this.http.post("http://192.168.64.2/server_easymc/profile_employer.php", formData)
+    this.http.post("http://192.168.64.2/server_easymc/upload.php", formData)
         .pipe(
             finalize(() => {
                 loading.dismiss();
@@ -270,25 +273,45 @@ export class EditprofileemployerPage implements OnInit {
         });
   }
 
+  startUpload(imgEntry) {
+    this.file.resolveLocalFilesystemUrl(imgEntry.filePath)
+        .then(entry => {
+            ( < FileEntry > entry).file(file => this.readFile(file))
+        })
+        .catch(err => {
+            this.presentToast('Error while reading file.');
+        });
+  }
+
 
   createdProses(){
+    
   	return new Promise(resolve => {
+  
+        this.storage.get('STORAGE_KEY').then((images)=>{
+          this.anggota = images;
+          this.name = this.anggota.name;
+          console.log(images);
+
   		let body = {
-  			aksi : 'add',
+        aksi : 'add',
         employ_id: this.employ_id,
         fname: this.fname,
         lname: this.lname,
         location: this.location,
         info: this.info,
-  		};
-
+        img_profile: this.name,
+      };
   		this.Provider.postData(body, 'profile_employer.php').subscribe(data => {
-  			this.router.navigate(['/customer']);
+  			this.router.navigate(['/tabbar/employer/homeem']);
   			console.log('OK');
-  		});
+      });
+    });
   	});
 
   }
+
+    
 
 
     

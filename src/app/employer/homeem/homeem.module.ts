@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 import { HomeemPageRoutingModule } from './homeem-routing.module';
-
+import { IonicSelectableModule } from 'ionic-selectable';
 import { HomeemPage } from './homeem.page';
 
 @NgModule({
@@ -13,7 +13,8 @@ import { HomeemPage } from './homeem.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    HomeemPageRoutingModule
+    HomeemPageRoutingModule,
+    IonicSelectableModule
   ],
   declarations: [HomeemPage]
 })

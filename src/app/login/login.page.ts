@@ -12,7 +12,7 @@ import { Storage } from '@ionic/Storage';
 })
 export class LoginPage implements OnInit {
   
-  email: string = "em@hotmail.com";
+  email: string = "mc@hotmail.com";
   password: string = "123456";
   status : string = "n";
   id: number;

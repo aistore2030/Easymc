@@ -9,6 +9,7 @@
   </ion-toolbar>
 </ion-header>
 <ion-content>
+
   
 
   <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
@@ -26,6 +27,7 @@
     <span class="subtext">Don't miss the opportunity to find an MC.</span>
     <hr class="line">
   </div>
+  
   <ion-grid  >
     <ion-row>
       <ion-col *ngFor="let customer of customers" col-12>
@@ -63,4 +65,20 @@
     </ion-infinite-scroll-content>
   </ion-infinite-scroll>
 
+  <ion-col *ngFor="let customer of customers"  >
+      <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+      <ion-list>
+        <ion-item-group *ngFor="let geo of result_group" >
+          <ion-item-divider color="light">
+            {{customer.fname}}
+          </ion-item-divider>    
+          <ion-item  *ngFor="let province of geo.data;let i=index" >
+            {{customer.lname}}
+          </ion-item>
+        </ion-item-group>
+      </ion-list>
+ 
+  </ion-col>
+
 </ion-content>
+

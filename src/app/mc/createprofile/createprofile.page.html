@@ -1,0 +1,205 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Create Profile {{id}}</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button text="Cancle">
+      </ion-back-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-slides #theSlides >
+    <ion-slide>
+      <div class="container">
+        <h4>1. General information</h4>
+        <ion-input type="hidden" [(ngModel)]="mcs_id" value="{{id}}"></ion-input>
+        <p>Firstname</p>
+        <ion-input type="text" placeholder="Firstname" [(ngModel)]="fname"></ion-input>
+        <p>Lastname</p>
+        <ion-input type="text" placeholder="Lastname" [(ngModel)]="lname"></ion-input>
+        <p>Phone</p>
+        <ion-input type="text" placeholder="Phone" [(ngModel)]="phone"></ion-input>
+        <p>Location</p>
+        <ion-input placeholder="Location" [(ngModel)]="location"></ion-input>
+        <ion-grid>
+          <ion-row>
+            <ion-col style="padding: 0px;">
+              <p>Budget</p>
+              <ion-input type="number" placeholder="xxxx" name="userCount">
+              </ion-input>
+            </ion-col>
+
+            <ion-col style="padding: 0 0 0 20px;">
+              <p>Budget</p>
+              <ion-input type="number" placeholder="xxxx" name="userCount">
+              </ion-input>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col style="padding: 0px;">
+              <p>Gender</p>
+              <ion-select interface="action-sheet" placeholder="Select One">
+                <ion-select-option value="1">Male</ion-select-option>
+                <ion-select-option value="2">Female</ion-select-option>
+                <ion-select-option value="3">bai</ion-select-option>
+                <ion-select-option value="4">Orange</ion-select-option>
+                <ion-select-option value="5">Green</ion-select-option>
+              </ion-select>
+            </ion-col>
+
+            <ion-col style="padding: 0 0 0 20px;">
+              <p>Age</p>
+              <ion-input type="number" placeholder="Age" name="userCount"></ion-input>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col style="padding: 0px;">
+              <p>Weigth</p>
+              <ion-input type="number" placeholder="Weigth" name="userCount"></ion-input>
+            </ion-col>
+
+            <ion-col style="padding: 0 0 0 20px;">
+              <p>Hight</p>
+              <ion-input type="number" placeholder="Hight" name="userCount"></ion-input>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col style="padding: 0px;">
+              <p>Shape</p>
+              <ion-input type="number" placeholder="Weigth" name="userCount"></ion-input>
+            </ion-col>
+
+            <ion-col style="padding: 0 0 0 20px;">
+              <p>Skin</p>
+              <ion-input type="number" placeholder="Hight" name="userCount"></ion-input>
+            </ion-col>
+          </ion-row>
+
+        </ion-grid>
+
+        <p>Blood Type</p>
+        <ion-select interface="action-sheet" placeholder="Select One"  >
+          <ion-select-option *ngFor="let dataselect of dataselects" value="{{dataselect.id}}">{{dataselect.blood_type}} </ion-select-option>
+         
+        </ion-select>
+
+        <ion-button (click)="moveToNext(theSlides)">next</ion-button>
+
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <div class="container">
+        <h2>1. General information</h2>
+
+        <p>Toppings</p>
+        <ion-select multiple="true" cancelText="cancle" okText="confirm" placeholder="Select any">
+          <ion-select-option value="bacon">Bacon</ion-select-option>
+          <ion-select-option value="olives">Black Olives</ion-select-option>
+          <ion-select-option value="xcheese">Extra Cheese</ion-select-option>
+          <ion-select-option value="peppers">Green Peppers</ion-select-option>
+          <ion-select-option value="mushrooms">Mushrooms</ion-select-option>
+          <ion-select-option value="onions">Onions</ion-select-option>
+          <ion-select-option value="pepperoni">Pepperoni</ion-select-option>
+          <ion-select-option value="pineapple">Pineapple</ion-select-option>
+          <ion-select-option value="sausage">Sausage</ion-select-option>
+          <ion-select-option value="Spinach">Spinach</ion-select-option>
+        </ion-select>
+
+        <p>Toppings</p>
+        <ion-select multiple="true" cancelText="cancle" okText="confirm">
+          <ion-select-option value="bacon">Bacon</ion-select-option>
+          <ion-select-option value="olives">Black Olives</ion-select-option>
+          <ion-select-option value="xcheese">Extra Cheese</ion-select-option>
+          <ion-select-option value="peppers">Green Peppers</ion-select-option>
+          <ion-select-option value="mushrooms">Mushrooms</ion-select-option>
+          <ion-select-option value="onions">Onions</ion-select-option>
+          <ion-select-option value="pepperoni">Pepperoni</ion-select-option>
+          <ion-select-option value="pineapple">Pineapple</ion-select-option>
+          <ion-select-option value="sausage">Sausage</ion-select-option>
+          <ion-select-option value="Spinach">Spinach</ion-select-option>
+        </ion-select>
+
+
+        <h2>3. General information</h2>
+        <p>Number of people</p>
+        <div class="flex_row">
+          <ion-icon style=" width: 50px; height: 50px; margin-left:  30px;" name="remove-circle" (click)="decrement() ">
+          </ion-icon>
+          <p style="text-align: center; width: 100%;"> {{currentNumber}} </p>
+          <ion-icon style="float: right; width: 50px; height: 50px; margin-right: 30px;" name="add-circle"
+            (click)="increment()"></ion-icon>
+        </div>
+
+        <p>Toppings</p>
+        <ion-select multiple="true" cancelText="cancle" okText="confirm">
+          <ion-select-option value="bacon">Bacon</ion-select-option>
+          <ion-select-option value="olives">Black Olives</ion-select-option>
+          <ion-select-option value="xcheese">Extra Cheese</ion-select-option>
+          <ion-select-option value="peppers">Green Peppers</ion-select-option>
+          <ion-select-option value="mushrooms">Mushrooms</ion-select-option>
+          <ion-select-option value="onions">Onions</ion-select-option>
+          <ion-select-option value="pepperoni">Pepperoni</ion-select-option>
+          <ion-select-option value="pineapple">Pineapple</ion-select-option>
+          <ion-select-option value="sausage">Sausage</ion-select-option>
+          <ion-select-option value="Spinach">Spinach</ion-select-option>
+        </ion-select>
+
+        <p>infomation</p>
+        <ion-textarea placeholder="infomation" [(ngModel)]="info"></ion-textarea>
+
+        <p>Work Type</p>
+        <ion-select multiple="true" cancelText="cancle" okText="confirm" placeholder="Select One" >
+          <ion-select-option *ngFor="let work of works" value="{{work.id}}">{{work.type_works}}</ion-select-option>
+  
+        </ion-select>
+
+        <p>Toppings</p>
+        <ion-select multiple="true" cancelText="cancle" okText="confirm">
+          <ion-select-option value="bacon">Bacon</ion-select-option>
+          <ion-select-option value="olives">Black Olives</ion-select-option>
+          <ion-select-option value="xcheese">Extra Cheese</ion-select-option>
+          <ion-select-option value="peppers">Green Peppers</ion-select-option>
+          <ion-select-option value="mushrooms">Mushrooms</ion-select-option>
+          <ion-select-option value="onions">Onions</ion-select-option>
+          <ion-select-option value="pepperoni">Pepperoni</ion-select-option>
+          <ion-select-option value="pineapple">Pineapple</ion-select-option>
+          <ion-select-option value="sausage">Sausage</ion-select-option>
+          <ion-select-option value="Spinach">Spinach</ion-select-option>
+        </ion-select>
+
+
+      </div>
+    </ion-slide>
+
+  </ion-slides>
+
+
+
+
+
+
+
+
+  <!-- <ion-button style="width: 100%; margin-top: 30px;" text="Accept" (click)="createdProses()">Accept</ion-button>-->
+  <div>
+
+
+    <ion-button expand="block" padding color="tertiary" *ngIf="employer_id>=1" (click)="updateProses()" fill="outline">
+      Update
+    </ion-button>
+  </div>
+
+
+  <!-- <ion-button color="tertiary"  (click)="createdProses()">Submit</ion-button>
+    <ion-button class="sigin" block (click)="createdProses()" >Sign In</ion-button> -->
+  <!-- <ion-button expand="block" padding color="tertiary" *ngIf="id>=1" (click)="updateProses()" fill="outline">Update
+    </ion-button> -->
+
+
+</ion-content>

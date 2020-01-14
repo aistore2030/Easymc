@@ -20,6 +20,8 @@ import { FilePath } from '@ionic-native/file-path/ngx';
 
 import { Camera } from '@ionic-native/Camera/ngx';
 import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer/ngx';
+import { IonicSelectableModule } from 'ionic-selectable';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -38,6 +40,9 @@ import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-nati
   	IonicModule.forRoot(), 
     AppRoutingModule,
     HttpClientModule,
+    IonicSelectableModule,
+    BrowserAnimationsModule,
+
    
   	],
   providers: [

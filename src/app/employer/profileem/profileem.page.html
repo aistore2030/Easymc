@@ -4,15 +4,15 @@
 
 <ion-content>
   <br>
-  <!-- <ion-toolbar>
+  
+  
+  <ion-toolbar >
+    <ion-avatar *ngIf="customers.length == 0">
+      <ion-img src="https://secure.gravatar.com/avatar/234e9cec179f18b37af37a0d1434161d?s=240&d=https%3A%2F%2Fstatic.teamtreehouse.com%2Fassets%2Fcontent%2Fdefault_avatar-ea7cf6abde4eec089a4e03cc925d0e893e428b2b6971b12405a9b118c837eaa2.png&r=pg"></ion-img>     
+    </ion-avatar>
 
-
-    <ion-buttons slot="primary">
-      <ion-button color="light" (click)="presentActionSheet()">
-        <ion-icon slot="icon-only" name="settings"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-  </ion-toolbar> -->
+   
+  </ion-toolbar>
 
   <div *ngFor="let customer of customers">
     <ion-toolbar>
@@ -21,13 +21,15 @@
           <ion-icon color="primary" slot="icon-only" name="time"></ion-icon>
         </ion-button>
       </ion-buttons>
-      <ion-avatar>
-    <img src="../../../assets/uploads/{{customer.img_profile}}" alt="">      
+      <ion-avatar (click)="upprofile(customer.employer_id,customer.img_profile)">
+    <img src="http://192.168.64.2/server_easymc/uploads/{{customer.img_profile}}" alt="">  
+    <ion-icon class="avatar" name="camera"></ion-icon>
       </ion-avatar>
+     
 
       <ion-buttons slot="primary">
         <ion-button color="primary"
-          (click)="updateCustomer(customer.employer_id,customer.employ_id,customer.fname,customer.lname ,customer.location,customer.info,customer.img_profile)">
+          (click)="updateCustomer(customer.employer_id,customer.employ_id,customer.fname,customer.lname ,customer.location,customer.info)">
           <ion-icon slot="icon-only" name="create"></ion-icon>
         </ion-button>
       </ion-buttons>

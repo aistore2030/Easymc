@@ -10,6 +10,8 @@
   </ion-toolbar>
 </ion-header>
 <ion-content padding>
+
+ 
   <h3 *ngIf="img_profile.length == 0" text-center>Please Select Image!</h3>
  
   <ion-list>
@@ -20,6 +22,7 @@
       <ion-label>
         {{ img.name }}
       </ion-label>
+
       <ion-button slot="end" fill="clear" (click)="startUpload(img)">
         <ion-icon slot="icon-only" name="cloud-upload"></ion-icon>
       </ion-button>

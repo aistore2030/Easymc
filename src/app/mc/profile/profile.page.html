@@ -1,24 +1,255 @@
-<ion-header >
-  <ion-toolbar >
-    <ion-buttons slot="secondary">
-      <ion-button>
-        <ion-icon color="light" slot="icon-only" name="time"></ion-icon>
-      </ion-button>
-    </ion-buttons>
 
-    <ion-buttons slot="primary">
-      <ion-button color="light">
-        <ion-icon slot="icon-only" name="settings"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-
-  </ion-toolbar>
-</ion-header>
-<ion-avatar>
-  <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
-</ion-avatar>
 <ion-content>
-  <div class="ion-padding content-container">
-   
+ 
+  <ion-slides [options]="slideOptsOne">
+    
+    <ion-slide>
+      <div style=" height: 375px; object-fit: cover;">
+        <img src="https://undubzapp.com/wp-content/uploads/2019/06/PIMTHA-2.jpg" />
+        <div class="overlay"></div>
+      </div>
+    </ion-slide>
+
+    <ion-slide>
+      <div style=" height: 375px; object-fit: cover;">
+        <img src="https://i.pinimg.com/originals/e7/fa/38/e7fa38ab17e7cc14aa5fecb2f70634fd.jpg" />
+      </div>
+    </ion-slide>
+
+    <ion-slide>
+      <div style=" height: 375px; object-fit: cover;">
+        <img src="https://i.pinimg.com/originals/ec/7a/15/ec7a156aee7d20b40a7634fb21beebd4.jpg" />
+      </div>
+    </ion-slide>
+
+  </ion-slides>
+  <div>
+    <ion-icon (click)="editprofile()" class="camera" name="camera"></ion-icon>
+    <div class="contaier">
+      <div class="wrapper_hearder">
+        <h1>Ploy Sutitosatham</h1>
+        <span>Bangkok, Thailand</span>
+        <div style="font-size: 25px; color: gold; padding: 10px 0 10px 0">
+          <ion-icon name="star"></ion-icon>
+          <ion-icon name="star"></ion-icon>
+          <ion-icon name="star"></ion-icon>
+          <ion-icon name="star"></ion-icon>
+          <ion-icon name="star"></ion-icon>
+        </div>
+        <div class="container_button">
+          <ion-button class="cricle_bt" ><ion-icon name="time"></ion-icon></ion-button>
+          <ion-button  class="shadow-red">Edit profile</ion-button>
+          <ion-button  class="cricle_bt"><ion-icon name="call"></ion-icon></ion-button>
+        </div>
+        <!-- <rating [(ngModel)]="rate" readonly="false" size="default" (ngModelChange)="onRateChange($event)"></rating> -->
+        <ion-grid>
+          <ion-row>
+            <ion-col style="border-right: 1px solid #7373733b;">
+              <h5>1</h5>
+              <h6>Job</h6>
+            </ion-col>
+            <ion-col>
+              <h5>1</h5>
+              <h6>Cancle Jobs</h6>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+
+      <hr style=" border-bottom: 5px solid #D9D9D9;">
+
+
+      <div class="wrapper_content">
+        <ion-segment [(ngModel)]="profile">
+          <ion-segment-button checked value="Personal">
+            <ion-label>Personal</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="Review">
+            <ion-label>Review</ion-label>
+          </ion-segment-button>
+        </ion-segment>
+      </div>
+
+
+      <div class="wrapper_content_text">
+        <div [ngSwitch]="profile">
+          <div *ngSwitchCase="'Personal'">
+            <ion-grid style="padding: 0;">
+              <ion-row>
+                <ion-col>
+                  <label class="head_text">
+                    <ion-icon src="../../../assets/icon/gender.svg"></ion-icon>Gender
+                  </label>
+                  <h3>Female</h3>
+
+                </ion-col>
+                <ion-col>
+                  <label class="head_text">
+                    <ion-icon src="../../../assets/icon/gender.svg"></ion-icon>Age
+                  </label>
+                  <h3>24 <span>year.</span></h3>
+                </ion-col>
+                <ion-col>
+                  <label class="head_text">
+                    <ion-icon src="../../../assets/icon/gender.svg"></ion-icon>Hight
+                  </label>
+                  <h3>171<span>cm.</span></h3>
+                </ion-col>
+              </ion-row>
+
+              <ion-row>
+                <ion-col>
+                  <label class="head_text">
+                    <ion-icon src="../../../assets/icon/gender.svg"></ion-icon>Gender
+                  </label>
+                  <h3>46 <span>kg.</span></h3>
+
+                </ion-col>
+                <ion-col>
+                  <label class="head_text">
+                    <ion-icon src="../../../assets/icon/gender.svg"></ion-icon>Age
+                  </label>
+                  <h3>Slender</h3>
+                </ion-col>
+                <ion-col>
+                  <label class="head_text">
+                    <ion-icon src="../../../assets/icon/gender.svg"></ion-icon>Hight
+                  </label>
+                  <h3>Brown skin</h3>
+                </ion-col>
+              </ion-row>
+
+              <ion-row>
+                <ion-col style="max-width: 111px;">
+                  <label class="head_text">
+                    <ion-icon src="../../../assets/icon/gender.svg"></ion-icon>Gender
+                  </label>
+                  <h3>4 <span>year.</span></h3>
+
+                </ion-col>
+                <ion-col>
+                  <label class="head_text">
+                    <ion-icon src="../../../assets/icon/gender.svg"></ion-icon>Age
+                  </label>
+                  <h3>Single, Doubles</h3>
+                </ion-col>
+
+              </ion-row>
+            </ion-grid>
+
+            <h2>Experiences</h2>
+            <p>พิธีกร การประกาศรางวัลอินทรจักร ไทยแลนด์
+              พิธีกร ประกวดร้องเพลงไทยลูกทุ่งชิงถ้วย
+              พระราชทานสมเด็จพระเทพฯ
+              พิธีกร ประชุมวิชาการคอนกรีตแห่งประเทศไทย
+              ครั้งที่13
+              พิธีกร รายการท่องเที่ยว ททท.จังหวัดเพชรบุรี
+              พิธีกร งานครบรอบ 1 ทศวรรษ รัตนโกสินทร์
+              พิธีกร วันมหามงคลพระราชสมภพสมเด็จพระเทพฯ
+              พิธีกร งานท่องเที่ยววิธีไทยไปด้วยกัน
+              พิธีกร สืบสานวัฒนธรรมไทย สายใยชุมชน
+              พิธีกร เปิดงาน Food Fest 2019
+              พิธีกร เปิดคลินิกฟุตบอล ThaiBev</p>
+
+            <p>
+              <ion-chip outline color="primary">
+                <ion-icon name="pin"></ion-icon>
+                <ion-label>Madison</ion-label>
+              </ion-chip>
+              <ion-chip outline color="primary">
+                <ion-icon name="wine"></ion-icon>
+                <ion-label>Nightlife</ion-label>
+              </ion-chip>
+              <ion-chip outline color="primary">
+                <ion-icon name="restaurant"></ion-icon>
+                <ion-label>Dining</ion-label>
+              </ion-chip>
+              <ion-chip outline color="primary">
+                <ion-icon name="videocam"></ion-icon>
+                <ion-label>Entertainment</ion-label>
+              </ion-chip>
+            </p>
+
+            <p>
+              <ion-chip outline color="tertiary">
+                <ion-icon name="pin"></ion-icon>
+                <ion-label>Madison</ion-label>
+              </ion-chip>
+              <ion-chip outline color="tertiary">
+                <ion-icon name="wine"></ion-icon>
+                <ion-label>Nightlife</ion-label>
+              </ion-chip>
+              <ion-chip outline color="tertiary">
+                <ion-icon name="restaurant"></ion-icon>
+                <ion-label>Dining</ion-label>
+              </ion-chip>
+              <ion-chip outline color="tertiary">
+                <ion-icon name="videocam"></ion-icon>
+                <ion-label>Entertainment</ion-label>
+              </ion-chip>
+            </p>
+          </div>
+
+
+
+          <div *ngSwitchCase="'Review'">
+            <div>
+              <ion-item style="padding: 30px 0 0 0;">
+                <ion-avatar slot="start" style="width: 60px; height: 60px; margin: 0px;">
+                  <img src="https://f.ptcdn.info/192/066/000/pylequ8eqfyBoV5jx8B-o.jpg">
+                </ion-avatar>
+                <ion-label>
+                  <h3>Phanukarn Rattanasuk</h3>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                </ion-label>
+              </ion-item>
+              <ion-label>
+                <h2>“ Where does it come from? “</h2>
+                <p>Contrary to popular belief, Lorem Ipsum is not
+                  simply random text. It has roots in a piece
+                  of classical Latin literature from 45 BC, </p>
+              </ion-label>
+            </div>
+            <div>
+              <ion-item style="padding: 30px 0 0 0;">
+                <ion-avatar slot="start" style="width: 60px; height: 60px; margin: 0px;">
+                  <img src="https://f.ptcdn.info/192/066/000/pylequ8eqfyBoV5jx8B-o.jpg">
+                </ion-avatar>
+                <ion-label>
+                  <h3>Phanukarn Rattanasuk</h3>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                </ion-label>
+              </ion-item>
+              <ion-label>
+                <h2>“ Where does it come from? “</h2>
+                <p>Contrary to popular belief, Lorem Ipsum is not
+                  simply random text. It has roots in a piece
+                  of classical Latin literature from 45 BC, </p>
+              </ion-label>
+            </div>
+
+          </div>
+        </div>
+
+        <ion-button (click)="prosesLogout()" style="width: 48%;">
+          <ion-icon slot="icon-only" name="log-out"></ion-icon>Logout
+        </ion-button>
+        <ion-button color="danger" style="width: 48%;">
+          <ion-icon slot="icon-only" name="trash"></ion-icon>Delete
+        </ion-button>
+
+      </div>
+
+
+    </div>
+
   </div>
 </ion-content>

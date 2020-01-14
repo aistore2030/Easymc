@@ -63,8 +63,8 @@ export class ProfileemPage implements OnInit {
     });
   }
 
-  updateCustomer(employer_id,employ_id,fname,lname,location,info,img_profile){
-  	this.router.navigate(['/employer/profileem/editprofileemployer/' + employer_id + '/' + employ_id + '/'  + fname  + '/' + lname + '/' + location + '/' + info+ '/' + img_profile ]);
+  updateCustomer(employer_id,employ_id,fname,lname,location,info){
+  	this.router.navigate(['/employer/profileem/editprofileemployer/' + employer_id + '/' + employ_id + '/'  + fname  + '/' + lname + '/' + location + '/' + info]);
   }
 
   
@@ -129,6 +129,11 @@ export class ProfileemPage implements OnInit {
   		});
 
   }
+
+  upprofile(employer_id,img_profile){
+    this.router.navigate(['employer/profileem/uploadprofile/' + employer_id + '/' + img_profile ]);
+  }
+
 
 
 

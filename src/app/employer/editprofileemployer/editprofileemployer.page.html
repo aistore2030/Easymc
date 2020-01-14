@@ -18,6 +18,9 @@
     <ion-avatar>
       <ion-img [src]="img.path"></ion-img>
     </ion-avatar>
+    <ion-button slot="end" fill="clear" (click)="startUpload(img)">
+      <ion-icon slot="icon-only" name="cloud-upload"></ion-icon>
+    </ion-button>
     <ion-button slot="end" fill="clear" (click)="deleteImage(img, pos)">
       <ion-icon slot="icon-only" name="trash"></ion-icon>
     </ion-button>
@@ -26,7 +29,7 @@
     <a (click)="selectImage()">
       upload image
     </a>
-
+ 
   </div>
   <hr style="border-top: 1px solid #E2E2E2; margin-top: 30px;">
   <div class="container">
@@ -47,9 +50,11 @@
 
 
 
+
+
     <!-- <ion-button style="width: 100%; margin-top: 30px;" text="Accept" (click)="createdProses()">Accept</ion-button>-->
-    <div >
-      <ion-button (click)="createdProses()" >Accept</ion-button>
+    <div  >
+      <ion-button (click)="createdProses()"  >Accept</ion-button>
  
       <ion-button expand="block" padding color="tertiary" *ngIf="employer_id>=1" (click)="updateProses()"
         fill="outline">Update
