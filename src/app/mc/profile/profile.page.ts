@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Storage } from '@ionic/Storage';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.page.html',
@@ -7,9 +8,16 @@ import { Router } from '@angular/router';
 })
 export class ProfilePage implements OnInit {
   profile: string = "Personal";
-  constructor(private router: Router ) { }
+  anggota: any;
+  id: any;
+  constructor(private router: Router,private storage: Storage ) { }
 
   ngOnInit() {
+    this.storage.get('session_storage').then((res)=>{
+      this.anggota = res;
+      this.id = this.anggota.id;
+      console.log(res);
+    });
   }
   slideOptsOne = {
     initialSlide: 0,

@@ -38,7 +38,7 @@
         </div>
         <div class="container_button">
           <ion-button class="cricle_bt" ><ion-icon name="time"></ion-icon></ion-button>
-          <ion-button  class="shadow-red">Edit profile</ion-button>
+          <ion-button  class="shadow-red" (click)="editprofile()">Edit profile</ion-button>
           <ion-button  class="cricle_bt"><ion-icon name="call"></ion-icon></ion-button>
         </div>
         <!-- <rating [(ngModel)]="rate" readonly="false" size="default" (ngModelChange)="onRateChange($event)"></rating> -->
@@ -239,12 +239,7 @@
           </div>
         </div>
 
-        <ion-button (click)="prosesLogout()" style="width: 48%;">
-          <ion-icon slot="icon-only" name="log-out"></ion-icon>Logout
-        </ion-button>
-        <ion-button color="danger" style="width: 48%;">
-          <ion-icon slot="icon-only" name="trash"></ion-icon>Delete
-        </ion-button>
+      
 
       </div>
 

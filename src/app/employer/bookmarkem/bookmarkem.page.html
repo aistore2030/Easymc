@@ -7,10 +7,42 @@
   </ion-toolbar>
 
   <ion-toolbar color="tertiary">
-    <ion-searchbar placeholder="Buscar usuario..."
-                   animated
-                   (ionChange)="buscarUsuario( $event )">
-    </ion-searchbar>
+    <ion-searchbar placeholder="Buscar usuario..." animated (ionChange)="buscarUsuario( $event )"> </ion-searchbar>
+    
+    <ion-item>
+      <ion-label>Gender</ion-label>
+      <ion-select placeholder="Select One" (ionChange)="buscarUsuario( $event )">
+        <ion-select-option value="xfsd">s</ion-select-option>
+        <ion-select-option value="d">d</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Gender</ion-label>
+      <ion-select interface="popover" placeholder="Select One" (ionChange)="buscarUsuario( $event )">
+       
+      <ion-select-option value="sdfsdf">
+        
+      </ion-select-option>
+       
+        <ion-select-option value="d">d</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+
+    <ion-list (ionChange)="buscarUsuario( $event )">
+      <ion-item>
+        <img style="height:80px; object-fit: cover;" src="https://ionicframework.com/docs/demos/api/card/madison.jpg" />
+        <ion-checkbox slot="start" [(ngModel)]="masterCheck" [indeterminate]="isIndeterminate" (click)="checkMaster($event)"></ion-checkbox>
+      </ion-item>
+      <ion-item *ngFor="let item of checkBoxList"  style="display: none;">
+        <ion-label>{{item.value}}</ion-label>
+        <ion-checkbox slot="start"  value="{{item.value}}" 
+        [(ngModel)]="item.isChecked" 
+        (ionChange)="checkEvent()"></ion-checkbox>
+      </ion-item>
+    </ion-list>
+
   </ion-toolbar>
 
 </ion-header>
@@ -31,8 +63,8 @@
 
     <ion-item *ngFor="let usuario of usuarios | filtro:textoBuscar">
       <ion-label>
-        <h4> {{ usuario.name }}</h4>
-        <h3> {{ usuario.email }} </h3>
+        <h4> {{ usuario.fname }}</h4>
+        <h3> {{ usuario.lname }} </h3>
       </ion-label>
     </ion-item>
 

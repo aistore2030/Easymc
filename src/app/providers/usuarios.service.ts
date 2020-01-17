@@ -13,7 +13,7 @@ export class UsuariosService {
 
   getUsuarios() {
 
-    return this.http.get<Usuario[]>( 'https://jsonplaceholder.typicode.com/users' )
+    return this.http.get<Usuario[]>( 'http://192.168.64.2/server_easymc/matching.php' )
               .pipe(
                 delay( 2500 )
               );

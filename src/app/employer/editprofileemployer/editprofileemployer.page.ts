@@ -34,6 +34,7 @@ export class EditprofileemployerPage implements OnInit {
   employer_id: any;
   name: any;
   img_profile: any;
+  photos: any;
 
   constructor( 
 		private router: Router,
@@ -53,6 +54,12 @@ export class EditprofileemployerPage implements OnInit {
       this.email = this.anggota.email;
       this.id = this.anggota.id;
       console.log(res);
+    });
+
+    this.storage.get('STORAGE_KEY').then((image)=>{
+      this.photos = image;
+      this.name = this.photos.name;
+      console.log(image);
     });
 
       this.actRoute.params.subscribe((data: any) => {

@@ -18,6 +18,8 @@ const routes: Routes = [
   { path: 'employer/profileem/uploadprofile/:employer_id/:img_profile', loadChildren: './employer/uploadprofile/uploadprofile.module#UploadprofilePageModule' },
   
   { path: 'mc/createprofile', loadChildren: './mc/createprofile/createprofile.module#CreateprofilePageModule' },
+  { path: 'mc/createprofile2', loadChildren: './mc/createprofile2/createprofile2.module#Createprofile2PageModule' },
+  
 
   
   

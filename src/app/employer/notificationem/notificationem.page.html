@@ -3,7 +3,8 @@
     <ion-title>notification</ion-title>
   </ion-toolbar>
 </ion-header>
-
+<ion-searchbar placeholder="Search..." expand="full" color="abwb" [(ngModel)]="searchQuery" ></ion-searchbar>
+<ion-button (click)="onClick(searchQuery)">click</ion-button>
 <ion-content>
 
 </ion-content>

@@ -1,0 +1,103 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>createprofile2</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="container">
+    <h4>Character on stage <i >* Can choose more than 3 items</i></h4>
+    <h2>{{blood_type}}</h2>
+    <p>Distinct or distinctive feature</p>
+    <ion-select multiple="true" cancelText="cancle" okText="confirm" placeholder="Select any" [(ngModel)]="distinctive" >
+      <ion-select-option value="1">Smile</ion-select-option>
+      <ion-select-option value="2">Patient</ion-select-option>
+      <ion-select-option value="3">Patient</ion-select-option>
+      <ion-select-option value="4">Leadership</ion-select-option>
+      <ion-select-option value="5">Confidence</ion-select-option>
+      <ion-select-option value="6">Responsibility</ion-select-option>
+    
+    </ion-select>
+
+    <p>Distinctive personality traits<i > * Select at least 3 items</i></p>  
+    <ion-select interface="action-sheet"[(ngModel)]="recessive" >
+      <ion-select-option value="1">Impatient</ion-select-option>
+      <ion-select-option value="2">Self-indulgent</ion-select-option>
+      <ion-select-option value="3">Self-willed</ion-select-option>
+      <ion-select-option value="4">Speaking fast</ion-select-option>
+      <ion-select-option value="5">Clumsy</ion-select-option>
+      <ion-select-option value="6">Complaining</ion-select-option>
+    </ion-select>
+
+
+    <h4>3. Work experience</h4>
+    <p>How many years have you worked? <i>Specified in numbers</i></p>
+    <div class="flex_row">
+      <ion-icon style=" width: 50px; height: 50px; margin-left:  30px;" name="remove-circle" (click)="decrement() ">
+      </ion-icon>
+        <ion-input type="hidden" value="{{currentNumber}}" [(ngModel)]="experience"></ion-input>
+      <p style="text-align: center; width: 100%;"> {{currentNumber}} </p>
+      <ion-icon style="float: right; width: 50px; height: 50px; margin-right: 30px;" name="add-circle"
+        (click)="increment()"></ion-icon>
+    </div>
+
+    <p>Operation type<i >* Can choose more than 1 item</i> </p>
+    <ion-select interface="action-sheet"[(ngModel)]="dual_work" >
+      <ion-select-option value="1">Single job</ion-select-option>
+      <ion-select-option value="2">Dual work (all sex)</ion-select-option>
+      <ion-select-option value="3">Dual work (same sex)</ion-select-option>
+    </ion-select>
+
+    <p>Work or award received</p>
+    <ion-textarea placeholder="Work or award received.." [(ngModel)]="award" ></ion-textarea>
+
+    <p>Work Type</p>
+    <ion-select interface="action-sheet"placeholder="Select One" [(ngModel)]="type_work" >
+      <ion-select-option value="1">Food & Drink</ion-select-option>
+      <ion-select-option value="2">Travel</ion-select-option>
+      <ion-select-option value="3">Shopping</ion-select-option>
+      <ion-select-option value="4">Family & Child</ion-select-option>
+      <ion-select-option value="5">Home & Decor</ion-select-option>
+      <ion-select-option value="6">Fashion</ion-select-option>
+      <ion-select-option value="7">Money & Wealth</ion-select-option>
+      <ion-select-option value="8">IT & Tech</ion-select-option>
+      <ion-select-option value="9">Health & Beauty</ion-select-option>
+      <ion-select-option value="10">Music & Performance</ion-select-option>
+      <ion-select-option value="11">Art & Design</ion-select-option>
+      <ion-select-option value="12">Sport & Leisure</ion-select-option>
+      <ion-select-option value="13">Book</ion-select-option>
+      <ion-select-option value="14">Business</ion-select-option>
+      <ion-select-option value="15">Cartoon & Gaming</ion-select-option>
+      <ion-select-option value="16">Self-Improvement</ion-select-option>
+      <ion-select-option value="17">Education</ion-select-option>
+      <ion-select-option value="18">Festival</ion-select-option>
+      <ion-select-option value="19">Automobile</ion-select-option>
+      <ion-select-option value="20">Plants & Animals</ion-select-option>
+      <ion-select-option value="21">Social Causes</ion-select-option>
+      <ion-select-option value="22">Job & Career</ion-select-option>
+      <ion-select-option value="23">Industrial</ion-select-option>
+      <ion-select-option value="24">Wedding</ion-select-option>
+
+    </ion-select>
+
+    <p>Abilities</p>
+    <ion-select interface="action-sheet"placeholder="Select One" [(ngModel)]="ability" >
+      <ion-select-option value="1">Bacon</ion-select-option>
+      <ion-select-option value="2">Black Olives</ion-select-option>
+      <ion-select-option value="3">Extra Cheese</ion-select-option>
+      <ion-select-option value="4">Green Peppers</ion-select-option>
+      <ion-select-option value="5">Mushrooms</ion-select-option>
+      <ion-select-option value="6">Onions</ion-select-option>
+      <ion-select-option value="7">Pepperoni</ion-select-option>
+      <ion-select-option value="8">Pineapple</ion-select-option>
+      <ion-select-option value="9">Sausage</ion-select-option>
+      <ion-select-option value="10">Spinach</ion-select-option>
+    </ion-select>
+
+    <ion-button (click)= createdProses()>Create Profile</ion-button>
+
+
+  </div>
+
+</ion-content>

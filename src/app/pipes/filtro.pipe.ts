@@ -13,8 +13,8 @@ export class FiltroPipe implements PipeTransform {
     texto = texto.toLocaleLowerCase();
 
     return usuarios.filter( usuario => {
-      return usuario.name.toLocaleLowerCase().includes(texto)
-             || usuario.email.toLocaleLowerCase().includes(texto);
+      return usuario.fname.toLocaleLowerCase().includes(texto)
+             || usuario.lname.toLocaleLowerCase().includes(texto);
     });
 
   }
