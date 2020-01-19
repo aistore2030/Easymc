@@ -1,6 +1,10 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>createprofile2</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button text="Cancle">
+      </ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -8,9 +12,9 @@
 
   <div class="container">
     <h4>Character on stage <i >* Can choose more than 3 items</i></h4>
-    <h2>{{blood_type}}</h2>
     <p>Distinct or distinctive feature</p>
-    <ion-select multiple="true" cancelText="cancle" okText="confirm" placeholder="Select any" [(ngModel)]="distinctive" >
+    <!-- multiple="true" cancelText="cancle" okText="confirm"  -->
+    <ion-select interface="action-sheet" placeholder="Select any" [(ngModel)]="distinctive" >
       <ion-select-option value="1">Smile</ion-select-option>
       <ion-select-option value="2">Patient</ion-select-option>
       <ion-select-option value="3">Patient</ion-select-option>

@@ -14,20 +14,29 @@ export class CreateprofilePage implements OnInit {
   id: any;
   anggota: any;
   currentNumber = 0;
-  fname: string;
-  lname: string;
-  mcs_id: string;
-  phone:any;
-  lowest_wage:any;
-  highest_wage:any;
-  gender:any;
-  age:any;
-  weight:any;
-  shape:any;
-  skin:any;
-  blood_type:any;
-  height:any;
-  location: string;
+
+  fname: string ="";
+  lname: string ="";
+  mcs_id: string ="";
+  phone: string ="";
+  lowest_wage: string ="";
+  highest_wage: string ="";
+  gender: string ="";
+  age: string ="";
+  weight: string ="";
+  shape: string ="";
+  skin: string ="";
+  blood_type:string ="" ;
+  currentstring  = 0;
+  distinctive: string ="";
+  recessive: string ="";
+  experience: string ="";
+  dual_work: string ="";
+  award: string ="";
+  type_work: string ="";
+  ability: string ="";
+  height:string ="";
+  location: string ="";
 
 
 
@@ -53,7 +62,7 @@ export class CreateprofilePage implements OnInit {
 
   onClick() {
     let data = {
-      mcs_id: this.mcs_id,
+      mcs_id: this.id,
       fname: this.fname,
       lname: this.lname,
       phone: this.phone,

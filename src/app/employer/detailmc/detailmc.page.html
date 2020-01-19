@@ -1,0 +1,259 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button text=""></ion-back-button>
+    </ion-buttons>
+
+
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+  <ion-slides [options]="slideOptsOne">
+
+    <ion-slide>
+      <div style=" height: 375px; object-fit: cover;">
+        <img src="https://undubzapp.com/wp-content/uploads/2019/06/PIMTHA-2.jpg" />
+        <div class="overlay"></div>
+      </div>
+    </ion-slide>
+
+    <ion-slide>
+      <div style=" height: 375px; object-fit: cover;">
+        <img src="https://i.pinimg.com/originals/e7/fa/38/e7fa38ab17e7cc14aa5fecb2f70634fd.jpg" />
+      </div>
+    </ion-slide>
+
+    <ion-slide>
+      <div style=" height: 375px; object-fit: cover;">
+        <img src="https://i.pinimg.com/originals/ec/7a/15/ec7a156aee7d20b40a7634fb21beebd4.jpg" />
+      </div>
+    </ion-slide>
+
+  </ion-slides>
+  <div>
+    <ion-icon class="bookmark" name="bookmark"></ion-icon>
+    <div class="contaier">
+      <div class="wrapper_hearder">
+        <h1>{{fname}} {{lname}}</h1>
+        <span>{{location}}</span>
+        <div style="font-size: 25px; color: gold; padding: 10px 0 10px 0">
+          <ion-icon name="star"></ion-icon>
+          <ion-icon name="star"></ion-icon>
+          <ion-icon name="star"></ion-icon>
+          <ion-icon name="star"></ion-icon>
+          <ion-icon name="star"></ion-icon>
+        </div>
+        <div class="container_button">
+          <ion-button class="cricle_bt">
+            <ion-icon name="time"></ion-icon>
+          </ion-button>
+          <ion-button class="shadow-red">จ้างงาน</ion-button>
+          <ion-button class="cricle_bt">
+            <ion-icon name="call"></ion-icon>
+          </ion-button>
+        </div>
+         <rating [(ngModel)]="rate" readonly="false" size="default" (ngModelChange)="onRateChange($event)"></rating> 
+        <ion-grid>
+          <ion-row>
+            <ion-col style="border-right: 1px solid #7373733b;">
+              <h5>1</h5>
+              <h6>Job</h6>
+            </ion-col>
+            <ion-col>
+              <h5>1</h5>
+              <h6>Cancle Jobs</h6>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+      </div>
+
+
+
+      <hr style=" border-bottom: 5px solid #D9D9D9;">
+
+
+      <div class="wrapper_content">
+        <ion-segment [(ngModel)]="profile">
+          <ion-segment-button checked value="Personal">
+            <ion-label>Personal</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="Review">
+            <ion-label>Review</ion-label>
+          </ion-segment-button>
+        </ion-segment>
+      </div>
+
+
+
+
+      <div [ngSwitch]="profile">
+        <div *ngSwitchCase="'Personal'">
+          <div class="wrapper_content_text">
+            <h2>Personal</h2>
+
+            <ion-grid style="padding: 0;">
+              <ion-row>
+                <ion-col>
+                  <label class="head_text">
+                    <ion-icon src="../../../assets/icon/gender.svg"></ion-icon>Gender
+                  </label>
+                  <h3>{{ genders}}</h3>
+
+                </ion-col>
+                <ion-col>
+                  <label class="head_text">
+                    <ion-icon src="../../../assets/icon/gender.svg"></ion-icon>Age
+                  </label>
+                  <h3>{{age}} <span>year.</span></h3>
+                </ion-col>
+                <ion-col>
+                  <label class="head_text">
+                    <ion-icon src="../../../assets/icon/gender.svg"></ion-icon>Hight
+                  </label>
+                  <h3>{{height}}<span>cm.</span></h3>
+                </ion-col>
+              </ion-row>
+
+              <ion-row>
+                <ion-col>
+                  <label class="head_text">
+                    <ion-icon src="../../../assets/icon/gender.svg"></ion-icon>Gender
+                  </label>
+                  <h3>{{weight}} <span>kg.</span></h3>
+
+                </ion-col>
+                <ion-col>
+                  <label class="head_text">
+                    <ion-icon src="../../../assets/icon/gender.svg"></ion-icon>Shapes
+                  </label>
+                  <h3>{{shapes}}</h3>
+                </ion-col>
+                <ion-col>
+                  <label class="head_text">
+                    <ion-icon src="../../../assets/icon/gender.svg"></ion-icon>Skin
+                  </label>
+                  <h3>{{skins}} </h3>
+                </ion-col>
+              </ion-row>
+
+              <ion-row>
+                <ion-col style="max-width: 98.33px;">
+                  <label class="head_text">
+                    <ion-icon src="../../../assets/icon/gender.svg"></ion-icon>Gender
+                  </label>
+                  <h3>{{experience}} <span>year.</span></h3>
+
+                </ion-col>
+                <ion-col>
+                  <label class="head_text">
+                    <ion-icon src="../../../assets/icon/gender.svg"></ion-icon>Age
+                  </label>
+                  <h3>{{dual_works}}</h3>
+                </ion-col>
+
+              </ion-row>
+            </ion-grid>
+          </div>
+          <div class="wrapper_content_text">
+            <h2>Experiences</h2>
+            <p>{{award}}</p>
+
+          </div>
+
+
+          <div class="wrapper_content_text">
+            <h2>Abilities</h2>
+            <p>
+              <ion-chip color="tertiary">
+                <ion-label>{{abilities}}</ion-label>
+              </ion-chip>
+
+              <ion-chip color="tertiary">
+                <ion-label>{{abilities}}</ion-label>
+              </ion-chip>
+
+              <ion-chip color="tertiary">
+                <ion-label>{{abilities}}</ion-label>
+              </ion-chip>
+
+            </p>
+          </div>
+
+          <div class="wrapper_content_text">
+            <h2>Type Works</h2>
+            <p>
+              <ion-chip color="primary">
+                <ion-label>{{type_works}}</ion-label>
+              </ion-chip>
+
+              <ion-chip color="primary">
+                <ion-label>{{type_works}}</ion-label>
+              </ion-chip>
+
+              <ion-chip color="primary">
+                <ion-label>{{type_works}}</ion-label>
+              </ion-chip>
+
+            </p>
+          </div>
+
+
+
+          <div *ngSwitchCase="'Review'">
+            <div>
+              <ion-item style="padding: 30px 0 0 0;">
+                <ion-avatar slot="start" style="width: 60px; height: 60px; margin: 0px;">
+                  <img src="https://f.ptcdn.info/192/066/000/pylequ8eqfyBoV5jx8B-o.jpg">
+                </ion-avatar>
+                <ion-label>
+                  <h3>Phanukarn Rattanasuk</h3>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                </ion-label>
+              </ion-item>
+              <ion-label>
+                <h2>“ Where does it come from? “</h2>
+                <p>Contrary to popular belief, Lorem Ipsum is not
+                  simply random text. It has roots in a piece
+                  of classical Latin literature from 45 BC, </p>
+              </ion-label>
+            </div>
+            <div>
+              <ion-item style="padding: 30px 0 0 0;">
+                <ion-avatar slot="start" style="width: 60px; height: 60px; margin: 0px;">
+                  <img src="https://f.ptcdn.info/192/066/000/pylequ8eqfyBoV5jx8B-o.jpg">
+                </ion-avatar>
+                <ion-label>
+                  <h3>Phanukarn Rattanasuk</h3>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                  <ion-icon name="star"></ion-icon>
+                </ion-label>
+              </ion-item>
+              <ion-label>
+                <h2>“ Where does it come from? “</h2>
+                <p>Contrary to popular belief, Lorem Ipsum is not
+                  simply random text. It has roots in a piece
+                  of classical Latin literature from 45 BC, </p>
+              </ion-label>
+            </div>
+
+          </div>
+        </div>
+
+
+
+      </div>
+
+
+    </div>
+
+  </div>
+</ion-content> -->

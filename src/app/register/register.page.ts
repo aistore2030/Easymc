@@ -77,7 +77,7 @@ export class RegisterPage implements OnInit {
         if(data.success){
           if(data.result ['status'] == 'y'){
             this.storage.set('session_storage', data.result);
-            this.router.navigate(['/tabs/mc/home']);
+            this.router.navigate(['mc/createprofile']);
             const toast = await this.toastCtrl.create({
               message: 'Login user Succesfully.',
               duration: 2000

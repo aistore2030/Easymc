@@ -14,7 +14,9 @@ export class FiltroPipe implements PipeTransform {
 
     return usuarios.filter( usuario => {
       return usuario.fname.toLocaleLowerCase().includes(texto)
-             || usuario.lname.toLocaleLowerCase().includes(texto);
+             || usuario.lname.toLocaleLowerCase().includes(texto)
+             || usuario.genders.toLocaleLowerCase().includes(texto)
+             || usuario.type_works.toLocaleLowerCase().includes(texto);
     });
 
   }

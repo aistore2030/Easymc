@@ -3,7 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { Provider } from '../../providers/provider'
 import { Storage } from '@ionic/Storage';
 import { NavController } from '@ionic/angular';
-
+import { ToastController } from '@ionic/angular';
 @Component({
   selector: 'app-createprofile2',
   templateUrl: './createprofile2.page.html',
@@ -11,35 +11,40 @@ import { NavController } from '@ionic/angular';
 })
 export class Createprofile2Page implements OnInit {
   getdata: any;
-  fname: string;
-  lname: string;
-  mcs_id: number;
-  phone: any;
-  lowest_wage: any;
-  highest_wage: any;
-  gender: any;
-  age: any;
-  weight: any;
-  shape: any;
-  skin: any;
-  blood_type: any;
+ 
   currentNumber = 0;
-  distinctive: any;
-  recessive: any;
-  experience: any;
-  dual_work: any;
-  award: any;
-  type_work: any;
-  ability: any;
-  height:any;
-  location: any;
+
+  fname: string ="";
+  lname: string ="";
+  mcs_id: string ="";
+  phone: string ="";
+  lowest_wage: string ="";
+  highest_wage: string ="";
+  gender: string ="";
+  age: string ="";
+  weight: string ="";
+  shape: string ="";
+  skin: string ="";
+  blood_type:string ="" ;
+  currentstring  = 0;
+  distinctive: string ="";
+  recessive: string ="";
+  experience: string ="";
+  dual_work: string ="";
+  award: string ="";
+  type_work: string ="";
+  ability: string ="";
+  height:string ="";
+  location: string ="";
+ 
 
   constructor(
     private router: Router,
     private actRoute: ActivatedRoute,
     private Provider: Provider,
     private storage: Storage,
-    public navCtrl: NavController
+    public navCtrl: NavController,
+    public toastCtrl: ToastController,
   ) { }
 
   ngOnInit() {
@@ -74,7 +79,7 @@ export class Createprofile2Page implements OnInit {
     this.currentNumber--;
   }
 
-  createdProses(){
+  async createdProses(){
     
   	return new Promise(resolve => {
   
@@ -97,7 +102,7 @@ export class Createprofile2Page implements OnInit {
         console.log(data);
 
   		let body = {
-        aksi : 'profile_mc',
+        aksi : 'postdata',
         mcs_id : this.mcs_id,
         fname : this.fname,
         lname : this.lname,
@@ -112,7 +117,7 @@ export class Createprofile2Page implements OnInit {
         shape : this.shape,
         skin : this.skin,
         blood_type : this.blood_type,
-        distinctive: this.distinctive.map( val => (val? this.distinctive : "")).join(","),
+        distinctive: this.distinctive,
         recessive: this.recessive,
         experience: this.experience,
         dual_work: this.dual_work,
@@ -120,9 +125,10 @@ export class Createprofile2Page implements OnInit {
         type_work: this.type_work,
         ability: this.ability,
       };
-  		this.Provider.postData(body, 'test.php').subscribe(data => {
-        this.storage.set('data_storage', data);
+  		this.Provider.postData(body, 'profile_mc.php').subscribe(data => {
+        this.router.navigate(['/tabbar/employer/homeem']);
   			console.log('OK');
+  			console.log('data');
       });
     });
   	});

@@ -1,8 +1,7 @@
-
 <ion-content>
- 
+
   <ion-slides [options]="slideOptsOne">
-    
+
     <ion-slide>
       <div style=" height: 375px; object-fit: cover;">
         <img src="https://undubzapp.com/wp-content/uploads/2019/06/PIMTHA-2.jpg" />
@@ -24,10 +23,10 @@
 
   </ion-slides>
   <div>
-    <ion-icon (click)="editprofile()" class="camera" name="camera"></ion-icon>
-    <div class="contaier">
+    <ion-icon (click)="upprofile()" class="camera" name="camera"></ion-icon>
+    <div class="contaier" *ngFor="let customer of customers">
       <div class="wrapper_hearder">
-        <h1>Ploy Sutitosatham</h1>
+        <h1>{{customer.fname}} {{customer.lname}}</h1>
         <span>Bangkok, Thailand</span>
         <div style="font-size: 25px; color: gold; padding: 10px 0 10px 0">
           <ion-icon name="star"></ion-icon>
@@ -37,9 +36,13 @@
           <ion-icon name="star"></ion-icon>
         </div>
         <div class="container_button">
-          <ion-button class="cricle_bt" ><ion-icon name="time"></ion-icon></ion-button>
-          <ion-button  class="shadow-red" (click)="editprofile()">Edit profile</ion-button>
-          <ion-button  class="cricle_bt"><ion-icon name="call"></ion-icon></ion-button>
+          <ion-button class="cricle_bt">
+            <ion-icon name="time"></ion-icon>
+          </ion-button>
+          <ion-button class="shadow-red" (click)="editprofile()">Edit profile</ion-button>
+          <ion-button class="cricle_bt">
+            <ion-icon name="call"></ion-icon>
+          </ion-button>
         </div>
         <!-- <rating [(ngModel)]="rate" readonly="false" size="default" (ngModelChange)="onRateChange($event)"></rating> -->
         <ion-grid>
@@ -54,9 +57,12 @@
             </ion-col>
           </ion-row>
         </ion-grid>
+
       </div>
 
-      <hr style=" border-bottom: 5px solid #D9D9D9;">
+
+
+      <!-- <hr style=" border-bottom: 5px solid #D9D9D9;"> -->
 
 
       <div class="wrapper_content">
@@ -71,29 +77,33 @@
       </div>
 
 
-      <div class="wrapper_content_text">
-        <div [ngSwitch]="profile">
-          <div *ngSwitchCase="'Personal'">
+
+
+      <div [ngSwitch]="profile">
+        <div *ngSwitchCase="'Personal'">
+          <div class="wrapper_content_text">
+            <h2>Personal</h2>
+
             <ion-grid style="padding: 0;">
               <ion-row>
                 <ion-col>
                   <label class="head_text">
                     <ion-icon src="../../../assets/icon/gender.svg"></ion-icon>Gender
                   </label>
-                  <h3>Female</h3>
+                  <h3>{{customer.genders}}</h3>
 
                 </ion-col>
                 <ion-col>
                   <label class="head_text">
                     <ion-icon src="../../../assets/icon/gender.svg"></ion-icon>Age
                   </label>
-                  <h3>24 <span>year.</span></h3>
+                  <h3>{{customer.age}} <span>year.</span></h3>
                 </ion-col>
                 <ion-col>
                   <label class="head_text">
                     <ion-icon src="../../../assets/icon/gender.svg"></ion-icon>Hight
                   </label>
-                  <h3>171<span>cm.</span></h3>
+                  <h3>{{customer.height}}<span>cm.</span></h3>
                 </ion-col>
               </ion-row>
 
@@ -102,91 +112,81 @@
                   <label class="head_text">
                     <ion-icon src="../../../assets/icon/gender.svg"></ion-icon>Gender
                   </label>
-                  <h3>46 <span>kg.</span></h3>
+                  <h3>{{customer.weight}} <span>kg.</span></h3>
 
                 </ion-col>
                 <ion-col>
                   <label class="head_text">
-                    <ion-icon src="../../../assets/icon/gender.svg"></ion-icon>Age
+                    <ion-icon src="../../../assets/icon/gender.svg"></ion-icon>Shapes
                   </label>
-                  <h3>Slender</h3>
+                  <h3>{{customer.shapes}}</h3>
                 </ion-col>
                 <ion-col>
                   <label class="head_text">
-                    <ion-icon src="../../../assets/icon/gender.svg"></ion-icon>Hight
+                    <ion-icon src="../../../assets/icon/gender.svg"></ion-icon>Skin
                   </label>
-                  <h3>Brown skin</h3>
+                  <h3>{{customer.skins}} </h3>
                 </ion-col>
               </ion-row>
 
               <ion-row>
-                <ion-col style="max-width: 111px;">
+                <ion-col style="max-width: 98.33px;">
                   <label class="head_text">
                     <ion-icon src="../../../assets/icon/gender.svg"></ion-icon>Gender
                   </label>
-                  <h3>4 <span>year.</span></h3>
+                  <h3>{{customer.experience}} <span>year.</span></h3>
 
                 </ion-col>
                 <ion-col>
                   <label class="head_text">
                     <ion-icon src="../../../assets/icon/gender.svg"></ion-icon>Age
                   </label>
-                  <h3>Single, Doubles</h3>
+                  <h3>{{customer.dual_works}}</h3>
                 </ion-col>
 
               </ion-row>
             </ion-grid>
-
+          </div>
+          <div class="wrapper_content_text">
             <h2>Experiences</h2>
-            <p>พิธีกร การประกาศรางวัลอินทรจักร ไทยแลนด์
-              พิธีกร ประกวดร้องเพลงไทยลูกทุ่งชิงถ้วย
-              พระราชทานสมเด็จพระเทพฯ
-              พิธีกร ประชุมวิชาการคอนกรีตแห่งประเทศไทย
-              ครั้งที่13
-              พิธีกร รายการท่องเที่ยว ททท.จังหวัดเพชรบุรี
-              พิธีกร งานครบรอบ 1 ทศวรรษ รัตนโกสินทร์
-              พิธีกร วันมหามงคลพระราชสมภพสมเด็จพระเทพฯ
-              พิธีกร งานท่องเที่ยววิธีไทยไปด้วยกัน
-              พิธีกร สืบสานวัฒนธรรมไทย สายใยชุมชน
-              พิธีกร เปิดงาน Food Fest 2019
-              พิธีกร เปิดคลินิกฟุตบอล ThaiBev</p>
+            <p>{{customer.award}}</p>
 
+          </div>
+
+
+          <div class="wrapper_content_text">
+            <h2>Abilities</h2>
             <p>
-              <ion-chip outline color="primary">
-                <ion-icon name="pin"></ion-icon>
-                <ion-label>Madison</ion-label>
+              <ion-chip color="tertiary">
+                <ion-label>{{customer.abilities}}</ion-label>
               </ion-chip>
-              <ion-chip outline color="primary">
-                <ion-icon name="wine"></ion-icon>
-                <ion-label>Nightlife</ion-label>
+
+              <ion-chip color="tertiary">
+                <ion-label>{{customer.abilities}}</ion-label>
               </ion-chip>
-              <ion-chip outline color="primary">
-                <ion-icon name="restaurant"></ion-icon>
-                <ion-label>Dining</ion-label>
+
+              <ion-chip color="tertiary">
+                <ion-label>{{customer.abilities}}</ion-label>
               </ion-chip>
-              <ion-chip outline color="primary">
-                <ion-icon name="videocam"></ion-icon>
-                <ion-label>Entertainment</ion-label>
-              </ion-chip>
+
             </p>
+          </div>
 
+          <div class="wrapper_content_text">
+            <h2>Type Works</h2>
             <p>
-              <ion-chip outline color="tertiary">
-                <ion-icon name="pin"></ion-icon>
-                <ion-label>Madison</ion-label>
+              <ion-chip color="primary">
+                <ion-label>{{customer.type_works}}</ion-label>
               </ion-chip>
-              <ion-chip outline color="tertiary">
-                <ion-icon name="wine"></ion-icon>
-                <ion-label>Nightlife</ion-label>
+
+              <ion-chip color="primary">
+                <ion-label>{{customer.type_works}}</ion-label>
               </ion-chip>
-              <ion-chip outline color="tertiary">
-                <ion-icon name="restaurant"></ion-icon>
-                <ion-label>Dining</ion-label>
+
+              <ion-chip color="primary">
+                <ion-label>{{customer.type_works}}</ion-label>
               </ion-chip>
-              <ion-chip outline color="tertiary">
-                <ion-icon name="videocam"></ion-icon>
-                <ion-label>Entertainment</ion-label>
-              </ion-chip>
+
             </p>
           </div>
 
@@ -239,7 +239,7 @@
           </div>
         </div>
 
-      
+
 
       </div>
 

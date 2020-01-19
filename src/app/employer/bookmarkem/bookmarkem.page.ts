@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UsuariosService } from '../../providers/usuarios.service';
 import { Usuario } from 'src/app/modals/usuario.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-bookmarkem',
@@ -15,7 +16,10 @@ export class BookmarkemPage {
   isIndeterminate:boolean;
   masterCheck:boolean;
   
-  constructor( private UsuariosService: UsuariosService ) {
+  constructor( 
+    private UsuariosService: UsuariosService,
+    private router: Router
+    ) {
 
     this.UsuariosService.getUsuarios()
       .subscribe( resp => this.usuarios = resp );
@@ -41,7 +45,9 @@ export class BookmarkemPage {
     const texto = event.target.value;
     this.textoBuscar = texto;
   }
-
+  showCustomer(mc_id,mcs_id,fname,lname,location,genders){
+  	this.router.navigate(['detailmc/' + mc_id  + '/' + mcs_id + '/' + fname + '/' + lname + '/' + location + '/' + genders]);
+  }
   checkMaster() {
     setTimeout(()=>{
       this.checkBoxList.forEach(obj => {
